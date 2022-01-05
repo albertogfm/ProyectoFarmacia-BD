@@ -3,6 +3,7 @@
 --@Descripción: Este archivo contiene la creación de las tablas para 
 --el proyecto Pharmacy Online (DDL)
 
+Prompt 1
 create table centro_operaciones(
   clave_centro_operaciones varchar2(6) not null,
   direccion blob not null,
@@ -12,6 +13,7 @@ create table centro_operaciones(
   constraint centro_operaciones_pk primary key (clave_centro_operaciones)
 );
 
+Prompt 2
 create table oficina(
   clave_centro_operaciones varchar2(6) not null,
   clave number(10,0) not null,
@@ -23,6 +25,7 @@ create table oficina(
     references centro_operaciones(clave_centro_operaciones)
 );
 
+Prompt 3
 create table farmacia(
   clave_centro_operaciones varchar2(6) not null,
   rfc_fiscal varchar2(14) not null,
@@ -33,6 +36,7 @@ create table farmacia(
     references centro_operaciones(clave_centro_operaciones)
 );
 
+Prompt 4
 create table almacen(
   clave_centro_operaciones varchar2(6) not null,
   tipo_almacen char(1) not null,
@@ -47,6 +51,7 @@ create table almacen(
     references almacen(clave_centro_operaciones)
 );
 
+Prompt 5
 create table lista_nombres_medicamento(
   lista_nombres_medicamento_id number(10,0) not null,
   nombre varchar2(100) not null,
@@ -54,6 +59,7 @@ create table lista_nombres_medicamento(
     primary key (lista_nombres_medicamento_id)
 );
 
+Prompt 6
 create table medicamento(
   medicamento_id number(10,0) not null,
   sustancia_activa varchar2(100) not null,
@@ -65,6 +71,7 @@ create table medicamento(
     references lista_nombres_medicamento(lista_nombres_medicamento_id)
 );
 
+Prompt 7
 create table farmacia_medicamento(
   farmacia_medicamento_id number(10,0) not null,
   numero_unidades number(5,0) not null,
@@ -79,6 +86,7 @@ create table farmacia_medicamento(
     references medicamento(medicamento_id)
 );
 
+Prompt 8
 create table empleado(
   empleado_id number(10,0) not null,
   nombre varchar2(50) not null,
@@ -92,6 +100,7 @@ create table empleado(
     references centro_operaciones(clave_centro_operaciones)
 );
 
+Prompt 9
 create table presentacion(
   presentacion_id numeric(10,0) not null,
   clave varchar(2) not null,
@@ -99,6 +108,7 @@ create table presentacion(
   constraint presentacion_pk primary key (presentacion_id)
 );
 
+Prompt 10
 create table medicamento_presentacion(
   medicamento_presentacion_id number(10,0) not null,
   presentacion_id number(10,0) not null,
@@ -116,6 +126,7 @@ create table medicamento_presentacion(
 --     references pedido_medicamento(pedido_medicamento_id)
 );
 
+Prompt 11
 create table operaciones_evento_medicamento(
   evento_medicamento_id number(10,0) not null,
   numero_unidades number(4,0) not null,
@@ -130,6 +141,7 @@ create table operaciones_evento_medicamento(
     references medicamento_presentacion(medicamento_presentacion_id)
 );
 
+Prompt 12
 create table evento_almacen(
   evento_almacen_id number(10,0) not null,
   fecha_evento date not null,
@@ -145,6 +157,7 @@ create table evento_almacen(
     references empleado(empleado_id)
 );
 
+Prompt 13
 create table pedido_medicamento( 
   pedido_medicamento_id number(10,0) not null,
   detalle varchar(200) null,
@@ -164,6 +177,7 @@ create table pedido_medicamento(
     references medicamento_presentacion(medicamento_presentacion_id)
 );
 
+Prompt 14
 create table pedido(
   pedido_id number(10,0) not null,
   folio char(13) not null,
@@ -185,6 +199,7 @@ create table pedido(
     references ubicacion_actual(ubicacion_actual_id)
 );
 
+Prompt 15
 create table status_pedido(
   status_pedido_id number(10,0) not null,
   clave varchar2(3) not null,
@@ -192,6 +207,7 @@ create table status_pedido(
   constraint status_pedido_pk primary key (status_pedido_id)
 );
 
+Prompt 16
 create table historico_status_pedido(
   historico_status_pedido_id number(10,0) not null,
   fecha_status date not null,
@@ -207,6 +223,7 @@ create table historico_status_pedido(
     references status_pedido(status_pedido_id)
 );
 
+Prompt 17
 create table historico_ubicacion_pedido_paquete(
   historico_ubicacion_pedido_paquete_id number(10,0) not null,
   fecha date not null,
@@ -222,6 +239,7 @@ create table historico_ubicacion_pedido_paquete(
 );
 
 
+Prompt 18
 create table ubicacion_actual(
   ubicacion_actual_id number(10,0) not null,
   latitud number(7,4) not null,
@@ -230,6 +248,7 @@ create table ubicacion_actual(
 );
 
 
+Prompt 19
 create table cliente(
   cliente_id char(10) not null,
   nombre varchar2(20) not null,
@@ -247,523 +266,62 @@ create table cliente(
     references tarjeta(numero_tarjeta)
 );
 
+Prompt 20
 create table tarjeta(
   numero_tarjeta varchar2(16) not null,
-  anio_expiracion date not null,
-  mes_expiracion date not null,
+  anio_expiracion number(2,0) not null,
+  mes_expiracion number(2,0) not null,
   constraint tarjeta_pk primary key (numero_tarjeta)  
 );
 
 --APLICANDO CHECKS
+Prompt c1
 alter table centro_operaciones add constraint co_clave_centro_operaciones_chk
  check length(clave_centro_operaciones) = 6;
 
+Prompt c2
 alter table almacen add constraint almacen_tipo_almacen_chk
   check tipo_almacen in ('M','C','D');
 
+Prompt c3
 alter table pedido add constraint pedido_folio_chk
   check length(folio)=13;
 
+Prompt c4
 alter table tarjeta add constraint tarjeta_numero_tarjeta_chk
   check length(numero_tarjeta)=16;
 
+Prompt c5
 alter table tarjeta add constraint tarjeta_anio_mes_expiracion_chk
-  check 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- 
--- table: cliente 
---
-
-create table cliente(
-    cliente_id          char(10)         not null,
-    nombre              varchar2(20)     not null,
-    apellido_paterno    varchar2(20),
-    apellido_materno    varchar2(20)     not null,
-    curp                varchar2(18)     not null,
-    rfc                 varchar2(13)     not null,
-    direccion           varchar2(100),
-    telefono            number(10, 0)    not null,
-    email               varchar2(80)     not null,
-    numero_tarjeta      char(16)         not null,
-    constraint pk9 primary key (cliente_id)
-)
-;
-
-
-
--- 
--- table: empleado 
---
-
-create table empleado(
-    empleado_id                 number(10, 0)    not null,
-    nombre                      varchar2(50)     not null,
-    apellidos                   varchar2(50)     not null,
-    fecha_ingreso               date             not null,
-    rfc                         varchar2(13)     not null,
-    clave_centro_operaciones    varchar2(6)      not null,
-    constraint pk10 primary key (empleado_id)
-)
-;
-
-
-
--- 
--- table: evento_almacen 
---
-
-create table evento_almacen(
-    evento_almacen_id           number(10, 0)    not null,
-    fecha_evento                date             not null,
-    tipo_evento                 varchar2(7),
-    clave_centro_operaciones    varchar2(6)      not null,
-    empleado_id                 number(10, 0)    not null,
-    constraint pk12 primary key (evento_almacen_id)
-)
-;
-
-
-
--- 
--- table: farmacia 
---
-
-create table farmacia(
-    clave_centro_operaciones    varchar2(6)      not null,
-    rfc_fiscal                  varchar2(14)     not null,
-    url                         varchar2(200)    not null,
-    constraint pk11 primary key (clave_centro_operaciones)
-)
-;
-
-
-
--- 
--- table: "farmacia-medicamento" 
---
-
-create table "farmacia-medicamento"(
-    "farmacia-medicamento_id"   number(10, 0)    not null,
-    numero_unidades             number(5, 0)     not null,
-    clave_centro_operaciones    varchar2(6)      not null,
-    medicamento_id              number(10, 0)    not null,
-    constraint pk15 primary key ("farmacia-medicamento_id")
-)
-;
-
-
-
--- 
--- table: historico_status_pedido 
---
-
-create table historico_status_pedido(
-    historico_status_pedido_id    number(10, 0)    not null,
-    fecha_status                  date             not null,
-    "´pedido_id"                  number(10, 0)    not null,
-    status_pedido_id              number(10, 0)    not null,
-    constraint pk8 primary key (historico_status_pedido_id)
-)
-;
-
-
-
--- 
--- table: historico_ubicacion_pedido_paquete 
---
-
-create table historico_ubicacion_pedido_paquete(
-    historico_ubicacion_pedido_paquete_id    number(10, 0)    not null,
-    fecha                                    date,
-    ubicacion_id                             number(10, 0)    not null,
-    "´pedido_id"                             number(10, 0)    not null,
-    constraint pk22 primary key (historico_ubicacion_pedido_paquete_id)
-)
-;
-
-
-
-
-
-
--- 
--- table: medicamento 
---
-
-create table medicamento(
-    medicamento_id                  number(10, 0)    not null,
-    sustancia_activa                varchar2(100)    not null,
-    descripcion                     varchar2(100)    not null,
-    lista_nombres_medicamento_id    number(10, 0)    not null,
-    constraint pk13 primary key (medicamento_id)
-)
-;
-
-
-
--- 
--- table: "medicamento-presentacion" 
---
-
-create table "medicamento-presentacion"(
-    "medicamento-presentacion_id"  number(10, 0)    not null,
-    presentacion_id                number(10, 0)    not null,
-    medicamento_id                 number(10, 0)    not null,
-    pedido_medicamento_id          number(10, 0)    not null,
-    constraint pk20 primary key ("medicamento-presentacion_id")
-)
-;
-
-
-
--- 
--- table: oficina 
---
-
-create table oficina(
-    clave_centro_operaciones    varchar2(6)      not null,
-    clave                       number(10, 0)    not null,
-    numero_oficina              number(10, 0)    not null,
-    nombre                      varchar2(50)     not null,
-    constraint pk5 primary key (clave_centro_operaciones)
-);
-
-
-
--- 
--- table: operaciones_evento_medicamento 
---
-
-create table operaciones_evento_medicamento(
-    "evento-medicamento_id"        number(10, 0)    not null,
-    numero_unidades                number(4, 0)     not null,
-    evento_almacen_id              number(10, 0)    not null,
-    "medicamento-presentacion_id"  number(10, 0)    not null,
-    constraint pk18 primary key ("evento-medicamento_id")
-)
-;
-
-
-
--- 
--- table: pedido 
---
-
-create table pedido(
-    "´pedido_id"        number(10, 0)    not null,
-    folio               char(13)         not null,
-    fecha_pedido        date,
-    importe             binary_float     not null,
-    fecha_status        date,
-    cliente_id          char(10)         not null,
-    status_pedido_id    number(10, 0)    not null,
-    ubicacion_id        number(10, 0)    not null,
-    constraint pk7 primary key ("´pedido_id")
-)
-;
-
-
-
--- 
--- table: pedido_medicamento 
---
-
-create table pedido_medicamento(
-    pedido_medicamento_id       number(10, 0)    not null,
-    detalle                     varchar2(200),
-    numero_unidades             number(4, 0)     not null,
-    "´pedido_id"                number(10, 0)    not null,
-    clave_centro_operaciones    varchar2(6)      not null,
-    constraint pk19 primary key (pedido_medicamento_id)
-)
-;
-
-
-
--- 
--- table: presentacion 
---
-
-create table presentacion(
-    presentacion_id    number(10, 0)    not null,
-    clave              varchar2(2)      not null,
-    unidades           number(3, 0)     not null,
-    constraint pk16 primary key (presentacion_id)
-)
-;
-
-
-
--- 
--- table: status_pedido 
---
-
-create table status_pedido(
-    status_pedido_id    number(10, 0)    not null,
-    clave               varchar2(3),
-    descripcion         varchar2(15)     not null,
-    constraint pk2 primary key (status_pedido_id)
-)
-;
-
-
-
--- 
--- table: tarjeta 
---
-
-create table tarjeta(
-    numero_tarjeta     char(16)    not null,
-    anio_expiracion    date        not null,
-    mes_expiracion     date,
-    constraint pk6 primary key (numero_tarjeta)
-)
-;
-
-
-
--- 
--- table: ubicacion_actual 
---
-
-create table ubicacion_actual(
-    ubicacion_id    number(10, 0)    not null,
-    latitud         number(7, 4)     not null,
-    longitud        number(7, 4)     not null,
-    constraint pk1 primary key (ubicacion_id)
-)
-;
-
-
-
--- 
--- table: almacen 
---
-
-alter table almacen add constraint refcentro_operaciones6 
-    foreign key (clave_centro_operaciones)
-    references centro_operaciones(clave_centro_operaciones)
-;
-
-alter table almacen add constraint refalmacen24 
-    foreign key (almacen_contigencia_id)
-    references almacen(clave_centro_operaciones)
-;
-
-
--- 
--- table: cliente 
---
-
-alter table cliente add constraint reftarjeta30 
-    foreign key (numero_tarjeta)
-    references tarjeta(numero_tarjeta)
-;
-
-
--- 
--- table: empleado 
---
-
-alter table empleado add constraint reffarmacia12 
-    foreign key (clave_centro_operaciones)
-    references farmacia(clave_centro_operaciones)
-;
-
-
--- 
--- table: evento_almacen 
---
-
-alter table evento_almacen add constraint refalmacen19 
-    foreign key (clave_centro_operaciones)
-    references almacen(clave_centro_operaciones)
-;
-
-alter table evento_almacen add constraint refempleado20 
-    foreign key (empleado_id)
-    references empleado(empleado_id)
-;
-
-
--- 
--- table: farmacia 
---
-
-alter table farmacia add constraint refcentro_operaciones7 
-    foreign key (clave_centro_operaciones)
-    references centro_operaciones(clave_centro_operaciones)
-;
-
-
--- 
--- table: "farmacia-medicamento" 
---
-
-alter table "farmacia-medicamento" add constraint reffarmacia14 
-    foreign key (clave_centro_operaciones)
-    references farmacia(clave_centro_operaciones)
-;
-
-alter table "farmacia-medicamento" add constraint refmedicamento15 
-    foreign key (medicamento_id)
-    references medicamento(medicamento_id)
-;
-
-
--- 
--- table: historico_status_pedido 
---
-
-alter table historico_status_pedido add constraint refpedido31 
-    foreign key ("´pedido_id")
-    references pedido("´pedido_id")
-;
-
-alter table historico_status_pedido add constraint refstatus_pedido32 
-    foreign key (status_pedido_id)
-    references status_pedido(status_pedido_id)
-;
-
-
--- 
--- table: historico_ubicacion_pedido_paquete 
---
-
-alter table historico_ubicacion_pedido_paquete add constraint refubicacion_actual43 
-    foreign key (ubicacion_id)
-    references ubicacion_actual(ubicacion_id)
-;
-
-alter table historico_ubicacion_pedido_paquete add constraint refpedido44 
-    foreign key ("´pedido_id")
-    references pedido("´pedido_id")
-;
-
-
--- 
--- table: medicamento 
---
-
-alter table medicamento add constraint reflista_nombres_medicamento16 
-    foreign key (lista_nombres_medicamento_id)
-    references lista_nombres_medicamento(lista_nombres_medicamento_id)
-;
-
-
--- 
--- table: "medicamento-presentacion" 
---
-
-alter table "medicamento-presentacion" add constraint refpresentacion35 
-    foreign key (presentacion_id)
-    references presentacion(presentacion_id)
-;
-
-alter table "medicamento-presentacion" add constraint refmedicamento36 
-    foreign key (medicamento_id)
-    references medicamento(medicamento_id)
-;
-
-alter table "medicamento-presentacion" add constraint refpedido_medicamento38 
-    foreign key (pedido_medicamento_id)
-    references pedido_medicamento(pedido_medicamento_id)
-;
-
-
--- 
--- table: oficina 
---
-
-alter table oficina add constraint refcentro_operaciones4 
-    foreign key (clave_centro_operaciones)
-    references centro_operaciones(clave_centro_operaciones)
-;
-
-
--- 
--- table: operaciones_evento_medicamento 
---
-
-alter table operaciones_evento_medicamento add constraint "refmedicamento-presentacion41" 
-    foreign key ("medicamento-presentacion_id")
-    references "medicamento-presentacion"("medicamento-presentacion_id")
-;
-
-alter table operaciones_evento_medicamento add constraint refevento_almacen23 
-    foreign key (evento_almacen_id)
-    references evento_almacen(evento_almacen_id)
-;
-
-
--- 
--- table: pedido 
---
-
-alter table pedido add constraint refstatus_pedido42 
-    foreign key (status_pedido_id)
-    references status_pedido(status_pedido_id)
-;
-
-alter table pedido add constraint refubicacion_actual45 
-    foreign key (ubicacion_id)
-    references ubicacion_actual(ubicacion_id)
-;
-
-alter table pedido add constraint refcliente28 
-    foreign key (cliente_id)
-    references cliente(cliente_id)
-;
-
-
--- 
--- table: pedido_medicamento 
---
-
-alter table pedido_medicamento add constraint refpedido26 
-    foreign key ("´pedido_id")
-    references pedido("´pedido_id")
-;
-
-alter table pedido_medicamento add constraint reffarmacia27 
-    foreign key (clave_centro_operaciones)
-    references farmacia(clave_centro_operaciones)
-;
-
+  check anio_expiracion > to_char(sysdate,'YY') or 
+  (anio_expiracion = to_char(sysdate,'YY') and 
+    mes_expiracion > to_char(sysdate,'MM'));
+
+Prompt c6
+alter table cliente add constraint cliente_telefono_chk
+  check length(telefono)=10;
+
+Prompt c7
+alter table oficina add constraint oficina_numero_oficina_chk
+  check length(numero_oficina)=10;
+
+Prompt c8
+alter table centro_operaciones add constraint cp_telefono_cp_chk
+  check length(telefono_centro_operaciones)=10;
+
+Prompt c9
+alter table cliente add constraint cliente_curp_check
+  check length(curp)=18;
+
+Prompt c10
+alter table cliente add constraint cliente_rfc_check
+  check length(rfc)=13;
+
+Prompt c11
+alter table farmacia add constraint farmacia_rfc_fiscal_check
+  check length(rfc_fiscal)=14;
+
+Prompt c12
+alter table pedido add constraint pedido_importe_chk
+  check pedido>0;
 
