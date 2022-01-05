@@ -159,14 +159,14 @@ create table operaciones_evento_medicamento(
     references medicamento_presentacion(medicamento_presentacion_id)
 );
 
-Prompt 18
+Prompt 13
 create table ubicacion_actual(
   ubicacion_actual_id number(10,0) not null,
   latitud number(7,4) not null,
   longitud number(7,4) not null,
   constraint ubicacion_actual_pk primary key (ubicacion_actual_id)
 );
-Prompt 15
+Prompt 14
 create table status_pedido(
   status_pedido_id number(10,0) not null,
   clave varchar2(3) not null,
@@ -174,14 +174,14 @@ create table status_pedido(
   constraint status_pedido_pk primary key (status_pedido_id)
 );
 
-Prompt 20
+Prompt 15
 create table tarjeta(
   numero_tarjeta varchar2(16) not null,
-  anio_expiracion number(2,0) not null,
-  mes_expiracion number(2,0) not null,
+  anio_expiracion varchar2(2) not null,
+  mes_expiracion varchar2(2) not null,
   constraint tarjeta_pk primary key (numero_tarjeta)  
 );
-Prompt 19
+Prompt 16
 create table cliente(
   cliente_id number(10) not null,
   nombre varchar2(20) not null,
@@ -199,7 +199,7 @@ create table cliente(
     references tarjeta(numero_tarjeta)
 );
 
-Prompt 14
+Prompt 17
 create table pedido(
   pedido_id number(10,0) not null,
   folio char(13) not null,
@@ -220,7 +220,7 @@ create table pedido(
     foreign key(ubicacion_id)
     references ubicacion_actual(ubicacion_actual_id)
 );
-Prompt 17
+Prompt 18
 create table historico_ubicacion_pedido_paquete(
   historico_ubicacion_pedido_paquete_id number(10,0) not null,
   fecha date not null,
@@ -235,7 +235,7 @@ create table historico_ubicacion_pedido_paquete(
     references pedido(pedido_id)
 );
 
-Prompt 13
+Prompt 19
 create table pedido_medicamento( 
   pedido_medicamento_id number(10,0) not null,
   detalle varchar(200) null,
@@ -255,9 +255,7 @@ create table pedido_medicamento(
     references medicamento_presentacion(medicamento_presentacion_id)
 );
 
-
-
-Prompt 16
+Prompt 20
 create table historico_status_pedido(
   historico_status_pedido_id number(10,0) not null,
   fecha_status date not null,
@@ -294,12 +292,6 @@ alter table pedido add constraint pedido_folio_chk
 Prompt c4
 alter table tarjeta add constraint tarjeta_numero_tarjeta_chk
   check (length(numero_tarjeta)=16);
-
-Prompt c5
--- alter table tarjeta add constraint tarjeta_anio_mes_expiracion_chk
---   check (anio_expiracion > to_char(sysdate,'YY') or 
---   (anio_expiracion = to_char(sysdate,'YY') and 
---     mes_expiracion > to_char(sysdate,'MM')));
 
 Prompt c6
 alter table cliente add constraint cliente_telefono_chk
