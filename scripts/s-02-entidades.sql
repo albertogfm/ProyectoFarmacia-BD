@@ -2,9 +2,7 @@
 --@Fecha creación: 04/01/2022
 --@Descripción: Este archivo contiene la creación de las tablas para 
 --el proyecto Pharmacy Online (DDL)
-whenever sqlerror exit rollback;
 
-Prompt 1
 create table centro_operaciones(
   clave_centro_operaciones varchar2(6) not null,
   direccion blob not null,
@@ -14,7 +12,6 @@ create table centro_operaciones(
   constraint centro_operaciones_pk primary key (clave_centro_operaciones)
 );
 
-Prompt 2
 create table oficina(
   clave_centro_operaciones varchar2(6) not null,
   clave number(10,0) not null,
@@ -26,7 +23,6 @@ create table oficina(
     references centro_operaciones(clave_centro_operaciones)
 );
 
-Prompt 3
 create table farmacia(
   clave_centro_operaciones varchar2(6) not null,
   rfc_fiscal varchar2(14) not null,
@@ -37,7 +33,6 @@ create table farmacia(
     references centro_operaciones(clave_centro_operaciones)
 );
 
-Prompt 4
 create table almacen(
   clave_centro_operaciones varchar2(6) not null,
   tipo_almacen char(1) not null,
@@ -52,7 +47,6 @@ create table almacen(
     references almacen(clave_centro_operaciones)
 );
 
-Prompt 5
 create table lista_nombres_medicamento(
   lista_nombres_medicamento_id number(10,0) not null,
   nombre varchar2(100) not null,
@@ -60,7 +54,6 @@ create table lista_nombres_medicamento(
     primary key (lista_nombres_medicamento_id)
 );
 
-Prompt 6
 create table medicamento(
   medicamento_id number(10,0) not null,
   sustancia_activa varchar2(100) not null,
@@ -72,7 +65,6 @@ create table medicamento(
     references lista_nombres_medicamento(lista_nombres_medicamento_id)
 );
 
-Prompt 7
 create table farmacia_medicamento(
   farmacia_medicamento_id number(10,0) not null,
   numero_unidades number(5,0) not null,
@@ -87,7 +79,6 @@ create table farmacia_medicamento(
     references medicamento(medicamento_id)
 );
 
-Prompt 8
 create table empleado(
   empleado_id number(10,0) not null,
   nombre varchar2(50) not null,
@@ -101,7 +92,6 @@ create table empleado(
     references centro_operaciones(clave_centro_operaciones)
 );
 
-Prompt 9
 create table presentacion(
   presentacion_id numeric(10,0) not null,
   clave varchar(2) not null,
@@ -109,7 +99,7 @@ create table presentacion(
   constraint presentacion_pk primary key (presentacion_id)
 );
 
-Prompt 10
+
 create table medicamento_presentacion(
   medicamento_presentacion_id number(10,0) not null,
   presentacion_id number(10,0) not null,
@@ -127,7 +117,7 @@ create table medicamento_presentacion(
 --     references pedido_medicamento(pedido_medicamento_id)
 );
 
-Prompt 11
+
 create table evento_almacen(
   evento_almacen_id number(10,0) not null,
   fecha_evento date not null,
@@ -143,9 +133,9 @@ create table evento_almacen(
     references empleado(empleado_id)
 );
 
-Prompt 12
 
-create table operaciones_evento_medicamento(
+
+create table operacion_evento_medicamento(
   evento_medicamento_id number(10,0) not null,
   numero_unidades number(4,0) not null,
   evento_almacen_id number(10,0) not null,
@@ -159,14 +149,14 @@ create table operaciones_evento_medicamento(
     references medicamento_presentacion(medicamento_presentacion_id)
 );
 
-Prompt 13
+
 create table ubicacion_actual(
   ubicacion_actual_id number(10,0) not null,
   latitud number(7,4) not null,
   longitud number(7,4) not null,
   constraint ubicacion_actual_pk primary key (ubicacion_actual_id)
 );
-Prompt 14
+
 create table status_pedido(
   status_pedido_id number(10,0) not null,
   clave varchar2(3) not null,
@@ -174,14 +164,14 @@ create table status_pedido(
   constraint status_pedido_pk primary key (status_pedido_id)
 );
 
-Prompt 15
+
 create table tarjeta(
   numero_tarjeta varchar2(16) not null,
   anio_expiracion varchar2(2) not null,
   mes_expiracion varchar2(2) not null,
   constraint tarjeta_pk primary key (numero_tarjeta)  
 );
-Prompt 16
+
 create table cliente(
   cliente_id number(10) not null,
   nombre varchar2(20) not null,
@@ -199,7 +189,7 @@ create table cliente(
     references tarjeta(numero_tarjeta)
 );
 
-Prompt 17
+
 create table pedido(
   pedido_id number(10,0) not null,
   folio char(13) not null,
@@ -220,7 +210,7 @@ create table pedido(
     foreign key(ubicacion_id)
     references ubicacion_actual(ubicacion_actual_id)
 );
-Prompt 18
+
 create table historico_ubicacion_pedido_paquete(
   historico_ubicacion_pedido_paquete_id number(10,0) not null,
   fecha date not null,
@@ -235,7 +225,7 @@ create table historico_ubicacion_pedido_paquete(
     references pedido(pedido_id)
 );
 
-Prompt 19
+
 create table pedido_medicamento( 
   pedido_medicamento_id number(10,0) not null,
   detalle varchar(200) null,
@@ -255,7 +245,7 @@ create table pedido_medicamento(
     references medicamento_presentacion(medicamento_presentacion_id)
 );
 
-Prompt 20
+
 create table historico_status_pedido(
   historico_status_pedido_id number(10,0) not null,
   fecha_status date not null,
@@ -273,51 +263,50 @@ create table historico_status_pedido(
 
 
 
-Prompt LLEGUEEEE
+
 
 
 --APLICANDO CHECKS
-Prompt c1
+
 alter table centro_operaciones add constraint co_clave_centro_operaciones_chk
  check (length(clave_centro_operaciones) = 6);
 
-Prompt c2
+
 alter table almacen add constraint almacen_tipo_almacen_chk
   check (tipo_almacen in ('M','C','D'));
 
-Prompt c3
+
 alter table pedido add constraint pedido_folio_chk
   check( length(folio)=13);
 
-Prompt c4
+
 alter table tarjeta add constraint tarjeta_numero_tarjeta_chk
   check (length(numero_tarjeta)=16);
 
-Prompt c6
+
 alter table cliente add constraint cliente_telefono_chk
   check (length(telefono)=10);
 
-Prompt c7
+
 alter table oficina add constraint oficina_numero_oficina_chk
   check (length(numero_oficina)=10);
 
-Prompt c8
+
 alter table centro_operaciones add constraint cp_telefono_cp_chk
   check (length(telefono_centro_operaciones)=10);
 
-Prompt c9
+
 alter table cliente add constraint cliente_curp_chk
   check (length(curp)=18);
 
-Prompt c10
+
 alter table cliente add constraint cliente_rfc_chk
   check (length(rfc)=13);
 
-Prompt c11
+
 alter table farmacia add constraint farmacia_rfc_fiscal_chk
   check (length(rfc_fiscal)=14);
 
-Prompt c12
 alter table pedido add constraint pedido_importe_chk
   check (importe>0);
 
