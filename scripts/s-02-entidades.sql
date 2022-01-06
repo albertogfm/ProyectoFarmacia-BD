@@ -198,7 +198,7 @@ create table pedido(
   fecha_status date not null,
   cliente_id number(10,0) not null,
   status_pedido_id number(10,0) not null,
-  ubicacion_id number(10,0) not null,
+  ubicacion_id number(10,0) null,
   constraint pedido_pk primary key (pedido_id),
   constraint pedido_cliente_id_fk 
     foreign key(cliente_id)
