@@ -37,3 +37,10 @@ create or raplace v_pedido(
      mp.pedido_medicamento
    join presentacion p on mp.presentacion_id=p.presentacion_id
    join medicamento m on mp.medicamento_id=m.medicamento_id;
+
+
+select empleado_id, clave_centro_operaciones,min(fecha_ingreso)
+  from empleado e
+  join farmacia f
+    on e.clave_centro_operaciones=f.clave_centro_operaciones
+    group by empleado_id,clave_centro_operaciones;
