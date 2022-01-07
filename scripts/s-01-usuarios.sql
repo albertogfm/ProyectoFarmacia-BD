@@ -4,14 +4,17 @@
 --el proyecto Pharmacy Online
 clear screen
 Prompt proporcione el password del usuario sys
-connect sys as sysdba
+connect sys/system as sysdba
 --permite la salida de mensajes a consula empleabo dbms_output.put_line
 set serveroutput on
 --este bloque anómimo valida la existencia del usuario, si existe lo elimina.
 declare
   v_count_1 number(1,0);
   v_count_2 number(1,0);
+  v_count_3 number(1,0);
+  v_count_4 number(1,0);
 begin
+  --USUARIO PROY INVITADO
   select count(*) into v_count_1
   from dba_users
   where username = 'GAGA_PROY_INVITADO';
@@ -19,12 +22,29 @@ begin
     dbms_output.put_line('Eliminando usuario invitado');
     execute immediate 'drop user gaga_proy_invitado cascade';
   end if;
+  --USUARIO PROY ADMIN
   select count(*) into v_count_2
   from dba_users
   where username = 'GAGA_PROY_ADMIN';
   if v_count_1 > 0 then
     dbms_output.put_line('Eliminando usuario existente');
     execute immediate 'drop user gaga_proy_admin cascade';
+  end if;
+  --USUARIO ROL ADMIN
+  select count(*) into v_count_3
+  from dba_roles
+  where role = 'ROL_ADMIN';
+  if v_count_3 > 0 then
+    dbms_output.put_line('Eliminando rol admin');
+    execute immediate 'drop role ROL_ADMIN';
+  end if;
+  --USUARIO ROL INVITADO
+  select count(*) into v_count_4
+  from dba_roles
+  where role = 'ROL_INVITADO';
+  if v_count_4 > 0 then
+    dbms_output.put_line('Eliminando rol invitado');
+    execute immediate 'drop role ROL_INVITADO';
   end if;
 end;
 /
