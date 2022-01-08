@@ -5,9 +5,9 @@
 
 create table centro_operaciones(
   clave_centro_operaciones varchar2(6) not null,
-  direccion blob not null,
-  latitud number(7,4) not null,
-  longitud number(7,4) not null,
+  direccion blob null,
+  latitud number(11,8) not null,
+  longitud number(11,8) not null,
   telefono_centro_operaciones number(10,0) not null,
   constraint centro_operaciones_pk primary key (clave_centro_operaciones)
 );
@@ -152,8 +152,8 @@ create table operacion_evento_medicamento(
 
 create table ubicacion_actual(
   ubicacion_actual_id number(10,0) not null,
-  latitud number(7,4) not null,
-  longitud number(7,4) not null,
+  latitud number(11,8) not null,
+  longitud number(11,8) not null,
   constraint ubicacion_actual_pk primary key (ubicacion_actual_id)
 );
 
@@ -198,7 +198,7 @@ create table pedido(
   fecha_status date not null,
   cliente_id number(10,0) not null,
   status_pedido_id number(10,0) not null,
-  ubicacion_id number(10,0) null,
+  ubicacion_actual_id number(10,0) null,
   constraint pedido_pk primary key (pedido_id),
   constraint pedido_cliente_id_fk 
     foreign key(cliente_id)
@@ -207,7 +207,7 @@ create table pedido(
     foreign key(status_pedido_id)
     references status_pedido(status_pedido_id),
   constraint pedido_ubicacion_id_fk 
-    foreign key(ubicacion_id)
+    foreign key(ubicacion_actual_id)
     references ubicacion_actual(ubicacion_actual_id)
 );
 
@@ -225,7 +225,7 @@ create table historico_ubicacion_pedido_paquete(
     references pedido(pedido_id)
 );
 
-
+Prompr creaaaando pedido
 create table pedido_medicamento( 
   pedido_medicamento_id number(10,0) not null,
   detalle varchar(200) null,
