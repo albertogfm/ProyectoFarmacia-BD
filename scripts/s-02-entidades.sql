@@ -36,7 +36,7 @@ create table farmacia(
 create table almacen(
   clave_centro_operaciones varchar2(6) not null,
   tipo_almacen char(1) not null,
-  documento_secciones blob not null,
+  documento_secciones blob null,
   almacen_contigencia_id varchar2(6),
   constraint almacen_pk primary key (clave_centro_operaciones),
   constraint almacen_clave_centro_operaciones_fk 
