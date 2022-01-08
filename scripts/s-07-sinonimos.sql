@@ -29,5 +29,11 @@ begin
     execute immediate 
     'create or replace synonym XX_'||i.table_name||' for '||i.table_name;
   end loop;
+  dbms_output.put_line("Realizando pruebas con los sinonimos creados");
+  select * from XX_medicamento;
+  select * from XX_empleado;
+  select * from cedis;
+  select * medicina;
+  select * detalle_evento;
 end;
 /
