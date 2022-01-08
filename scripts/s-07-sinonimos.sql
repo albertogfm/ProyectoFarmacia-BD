@@ -33,7 +33,7 @@ begin
   select * from XX_medicamento;
   select * from XX_empleado;
   select * from cedis;
-  select * medicina;
-  select * detalle_evento;
+  select * from medicina;
+  select * from detalle_evento;
 end;
 /
