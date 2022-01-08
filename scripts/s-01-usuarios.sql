@@ -55,11 +55,12 @@ Prompt Creando usuario admin
 create user gaga_proy_admin identified by gaga quota unlimited on users;
 
 create role rol_admin;
-grant create session, create table, create view,create procedure,create trigger,
-create sequence to rol_admin;
+grant create session, create table, create sequence, create procedure, 
+create trigger, create any directory, create synonym, create public synonym,
+  create view to rol_admin;
 
 create role rol_invitado;
-grant create session, create table to rol_invitado;
+grant create session, create synonym to rol_invitado;
 
 prompt Asignando roles
 grant rol_admin to gaga_proy_admin;
