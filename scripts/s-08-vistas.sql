@@ -38,7 +38,7 @@ create or replace view v_pedido(
    join pedido_medicamento pm 
      on pm.pedido_id=p.pedido_id
    join medicamento_presentacion mp 
-     on pm.pedido_medicamento_id = mp.pedido_medicamento_id
+     on pm.medicamento_presentacion_id = mp.medicamento_presentacion_id
    join presentacion pr 
      on mp.presentacion_id=pr.presentacion_id
    join medicamento m 

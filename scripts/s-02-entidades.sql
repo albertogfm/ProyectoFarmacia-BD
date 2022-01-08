@@ -104,7 +104,6 @@ create table medicamento_presentacion(
   medicamento_presentacion_id number(10,0) not null,
   presentacion_id number(10,0) not null,
   medicamento_id number(10,0) not null,
-  pedido_medicamento_id number(10,0) not null,
   constraint medicamento_presentacion_pk primary key (medicamento_presentacion_id),
   constraint mp_presentacion_id_fk 
     foreign key(presentacion_id) 
@@ -225,7 +224,7 @@ create table historico_ubicacion_pedido_paquete(
     references pedido(pedido_id)
 );
 
-Prompr creaaaando pedido
+
 create table pedido_medicamento( 
   pedido_medicamento_id number(10,0) not null,
   detalle varchar(200) null,
@@ -288,9 +287,6 @@ alter table cliente add constraint cliente_telefono_chk
   check (length(telefono)=10);
 
 
-alter table oficina add constraint oficina_numero_oficina_chk
-  check (length(numero_oficina)=10);
-
 
 alter table centro_operaciones add constraint cp_telefono_cp_chk
   check (length(telefono_centro_operaciones)=10);
@@ -311,6 +307,8 @@ alter table pedido add constraint pedido_importe_chk
   check (importe>0);
 
 alter table pedido add constraint pedido_status_pedido_chk
-  check((status_pedido_id=2 or status_pedido_id = 3) 
-  and ubicacion_actual_id is not null);
+  check(((status_pedido_id=2 or status_pedido_id = 3) 
+  and ubicacion_actual_id is not null)
+  OR ((status_pedido_id=1 or status_pedido_id = 4 or status_pedido_id = 5) 
+  and ubicacion_actual_id is null)));
 

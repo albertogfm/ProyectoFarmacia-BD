@@ -91,3 +91,11 @@ create sequence historico_ubicacion_pedido_seq
   nocycle
   cache 100
   order;
+create sequence ubicacion_actual_seq
+  start with 1
+  increment by 1 
+  nomaxvalue
+  nominvalue
+  nocycle
+  cache 100
+  order;
