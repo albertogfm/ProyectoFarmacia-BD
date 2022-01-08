@@ -310,3 +310,7 @@ alter table farmacia add constraint farmacia_rfc_fiscal_chk
 alter table pedido add constraint pedido_importe_chk
   check (importe>0);
 
+alter table pedido add constraint pedido_status_pedido_chk
+  check((status_pedido_id=2 or status_pedido_id = 3) 
+  and ubicacion_actual_id is not null);
+
