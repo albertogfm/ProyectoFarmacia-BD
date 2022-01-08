@@ -33,8 +33,8 @@ end;
 /
 
   Prompt Realizando pruebas con los sinonimos creados
-  select * from XX_medicamento;
+  select * from XX_medicamento where medicamento_id between 1 and 5;
   select * from XX_empleado;
   select * from cedis;
-  select * from medicina;
+  select * from medicina where medicamento_id between 1 and 5;
   select * from detalle_evento;

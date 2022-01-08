@@ -56,7 +56,7 @@ create table lista_nombres_medicamento(
 
 create table medicamento(
   medicamento_id number(10,0) not null,
-  sustancia_activa varchar2(100) not null,
+  sustancia_activa varchar2(150) not null,
   descripcion varchar2(1000) not null,
   lista_nombres_medicamento_id number(10,0) not null,
   constraint medicamento_pk primary key (medicamento_id),

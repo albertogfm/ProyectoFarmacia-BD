@@ -8,8 +8,8 @@ Prompt primer tabla externa
 @s-04-tablas-externas-nomb
 Prompt segunda tabla externa
 @s-04-tablas-externa-med
--- connect gaga_proy_admin/gaga
--- @s-05-secuencias.sql
--- @s-06-indices.sql
--- @s-07-sinonimos.sql
--- @s-08-vistas
+connect gaga_proy_admin/gaga
+@s-05-secuencias.sql
+@s-06-indices.sql
+@s-07-sinonimos.sql
+@s-08-vistas
