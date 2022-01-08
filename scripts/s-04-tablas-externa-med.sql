@@ -37,11 +37,16 @@ organization external (
 )
 reject limit unlimited;
 
-merge into medicamento_respaldo r using medicamento m on
-(r.medicamento_id = m.medicamento_id)
-when matched then update
-set r.sustancia_activa=m.sustancia_activa, r.descripcion=m.descripcion, 
-  r.lista_nombres_medicamento_id=m.lista_nombres_medicamento_id
-when not matched then insert
-(r.medicamento_id, r.sustancia_activa, r.descripcion, r.lista_nombres_medicamento_id) values
-(m.medicamento_id, m.sustancia_activa, r.descripcion, m.lista_nombres_medicamento_id);
+declare
+--Declarando cursor
+v_lista_nombres_medicamento_id number(5,0);
+cursor cur_medicamento is
+  select * from medicamento_respaldo;
+begin
+  for m in cur_medicamento loop
+    insert into medicamento(medicamento_id,sustancia_activa,descripcion,
+      lista_nombres_medicamento_id) values (m.medicamento_id,m.sustancia_activa,
+      m.descripcion,m.lista_nombres_medicamento_id);
+  end loop;
+end;
+/

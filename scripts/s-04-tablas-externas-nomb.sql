@@ -31,15 +31,19 @@ create table lista_nombres_respaldo (
 )
 reject limit unlimited;
 
-prompt haciendo merge en las tablas
+prompt Realizando insercion de datos en medicamento nombres
 
-merge into lista_nombres_respaldo r using lista_nombres_medicamento lm on
-(r.lista_nombres_medicamento_id = lm.lista_nombres_medicamento_id)
-when matched then update
-set r.nombre=lm.nombre 
-when not matched then insert
-(r.lista_nombres_medicamento_id,r.nombre) values
-(lm.lista_nombres_medicamento_id,lm.nombre);
+declare
+--Declarando cursor
+cursor cur_medicamento is
+  select * from lista_nombres_respaldo;
+begin
+  for m in cur_medicamento loop
+    insert into lista_nombres_medicamento(lista_nombres_medicamento_id, nombre) 
+    values (m.lista_nombres_medicamento_id, m.nombre);
+  end loop;
+end;
+/
 
 
 
