@@ -31,4 +31,15 @@ create table lista_nombres_respaldo (
 )
 reject limit unlimited;
 
+prompt haciendo merge en las tablas
+
+merge into lista_nombres_respaldo r using lista_nombres_medicamento lm on
+(r.lista_nombres_medicamento_id = lm.lista_nombres_medicamento_id)
+when matched then update
+set r.nombre=lm.nombe, 
+when not matched then insert
+(r.lista_nombres_medicamento_id,r.nombre) values
+(lm.lista_nombres_medicamento_id,lm.nombre);
+
+
 

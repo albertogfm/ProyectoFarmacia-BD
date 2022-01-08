@@ -37,3 +37,11 @@ organization external (
 )
 reject limit unlimited;
 
+merge into medicamento_respaldo r using medicamento m on
+(r.medicamento_id = m.medicamento_id)
+when matched then update
+set r.sustancia_activa=m.sustancia_activa, r.descripcion=p.descripcion, 
+  r.lista_nombres_medicamento_id=p.lista_nombres_medicamento_id
+when not matched then insert
+(r.medicamento_id, r.sustancia_activa, r.descripcion, r.lista_nombres_medicamento_id) values
+(m.medicamento_id, m.sustancia_activa, r.descripcion, m.lista_nombres_medicamento_id);
