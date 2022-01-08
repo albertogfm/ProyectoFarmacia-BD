@@ -15,7 +15,7 @@ prompt creando tabla externa
 -- Creando tabla medicamento
 create table medicamento_respaldo (
   medicamento_id number(10,0) not null,
-  sustancia_activa varchar2(100) not null,
+  sustancia_activa varchar2(150) not null,
   descripcion varchar2(1000) not null,
   lista_nombres_medicamento_id number(5,0) not null
 )
