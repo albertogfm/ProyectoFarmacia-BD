@@ -310,5 +310,5 @@ alter table pedido add constraint pedido_status_pedido_chk
   check(((status_pedido_id=2 or status_pedido_id = 3) 
   and ubicacion_actual_id is not null)
   OR ((status_pedido_id=1 or status_pedido_id = 4 or status_pedido_id = 5) 
-  and ubicacion_actual_id is null)));
+  and ubicacion_actual_id is null));
 

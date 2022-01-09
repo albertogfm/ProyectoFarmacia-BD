@@ -13,3 +13,4 @@ connect gaga_proy_admin/gaga
 @s-06-indices.sql
 @s-07-sinonimos.sql
 @s-08-vistas
+@s-09-carga-inicial.sql
