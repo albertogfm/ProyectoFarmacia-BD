@@ -13,7 +13,8 @@ show user
 prompt creando tabla externa
 create table lista_nombres_respaldo (
   lista_nombres_medicamento_id number(10,0) not null,
-  nombre varchar2(100) not null
+  nombre varchar2(100) not null,
+  medicamento_id number(10,0) not null
 ) organization external (
   type oracle_loader
   default directory tmp_dir
@@ -24,7 +25,7 @@ create table lista_nombres_respaldo (
     fields terminated by ','
     lrtrim
     missing field values are null(
-      lista_nombres_medicamento_id, nombre
+      lista_nombres_medicamento_id, nombre,medicamento_id
     )
   )
   location ('lista_nombres_medicamentos.csv')
@@ -39,8 +40,8 @@ cursor cur_medicamento is
   select * from lista_nombres_respaldo;
 begin
   for m in cur_medicamento loop
-    insert into lista_nombres_medicamento(lista_nombres_medicamento_id, nombre) 
-    values (m.lista_nombres_medicamento_id, m.nombre);
+    insert into lista_nombres_medicamento(lista_nombres_medicamento_id, nombre, medicamento_id) 
+    values (m.lista_nombres_medicamento_id, m.nombre, m.medicamento_id);
   end loop;
 end;
 /

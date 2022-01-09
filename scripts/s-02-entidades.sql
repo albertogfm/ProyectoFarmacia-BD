@@ -46,24 +46,24 @@ create table almacen(
     foreign key(almacen_contigencia_id) 
     references almacen(clave_centro_operaciones)
 );
+create table medicamento(
+  medicamento_id number(10,0) not null,
+  sustancia_activa varchar2(150) not null,
+  descripcion varchar2(350) not null,
+  constraint medicamento_pk primary key (medicamento_id)
+);
 
 create table lista_nombres_medicamento(
   lista_nombres_medicamento_id number(10,0) not null,
   nombre varchar2(100) not null,
+  medicamento_id number(10,0) not null,
   constraint lista_nombres_medicamento_pk 
-    primary key (lista_nombres_medicamento_id)
+    primary key (lista_nombres_medicamento_id),
+  constraint lnm_medicamento_fk 
+    foreign key(medicamento_id) 
+    references medicamento(medicamento_id)
 );
 
-create table medicamento(
-  medicamento_id number(10,0) not null,
-  sustancia_activa varchar2(150) not null,
-  descripcion varchar2(1000) not null,
-  lista_nombres_medicamento_id number(10,0) not null,
-  constraint medicamento_pk primary key (medicamento_id),
-  constraint medicina_medicamento_fk 
-    foreign key(lista_nombres_medicamento_id) 
-    references lista_nombres_medicamento(lista_nombres_medicamento_id)
-);
 
 create table farmacia_medicamento(
   farmacia_medicamento_id number(10,0) not null,

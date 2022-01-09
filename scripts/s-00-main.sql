@@ -5,9 +5,9 @@ connect gaga_proy_admin/gaga
 connect gaga_proy_admin/gaga
 @s-03-tablas-temporales
 Prompt primer tabla externa
-@s-04-tablas-externas-nomb
-Prompt segunda tabla externa
 @s-04-tablas-externa-med
+Prompt segunda tabla externa
+@s-04-tablas-externas-nomb
 connect gaga_proy_admin/gaga
 @s-05-secuencias.sql
 @s-06-indices.sql

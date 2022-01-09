@@ -16,8 +16,7 @@ prompt creando tabla externa
 create table medicamento_respaldo (
   medicamento_id number(10,0) not null,
   sustancia_activa varchar2(150) not null,
-  descripcion varchar2(1000) not null,
-  lista_nombres_medicamento_id number(5,0) not null
+  descripcion varchar2(350) not null
 )
 organization external (
   type oracle_loader
@@ -30,7 +29,7 @@ organization external (
   lrtrim
   missing field values are null
   (
-    medicamento_id, sustancia_activa, descripcion, lista_nombres_medicamento_id
+    medicamento_id, sustancia_activa, descripcion
   )
   )
   location ('medicamento.csv')
@@ -44,9 +43,8 @@ cursor cur_medicamento is
   select * from medicamento_respaldo;
 begin
   for m in cur_medicamento loop
-    insert into medicamento(medicamento_id,sustancia_activa,descripcion,
-      lista_nombres_medicamento_id) values (m.medicamento_id,m.sustancia_activa,
-      m.descripcion,m.lista_nombres_medicamento_id);
+    insert into medicamento(medicamento_id,sustancia_activa,descripcion) 
+    values (m.medicamento_id,m.sustancia_activa,m.descripcion);
   end loop;
 end;
 /
