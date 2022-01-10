@@ -99,3 +99,12 @@ create sequence ubicacion_actual_seq
   nocycle
   cache 100
   order;
+create sequence  documento_secciones_num_seq
+  start with 1
+  increment by 1 
+  nomaxvalue
+  nominvalue
+  nocycle
+  cache 100
+  order;
+ 

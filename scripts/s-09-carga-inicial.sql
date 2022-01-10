@@ -89,26 +89,26 @@ insert into farmacia (clave_centro_operaciones,rfc_fiscal,url) values ('XFVDO5',
 
 --ALMACEN
 PROMPT CREANDO ALMACEN
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('66CIZA','C',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('0Q5HBR','M',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('PPLA64','D',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('6X3A87','C',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('TWPSVY','M',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('MFD9LH','M',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('F1OSTA','M',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('DVZW87','M',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('5O6IBJ','D',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('7H4HVM','M',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('7ITR2W','C',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('A10NRY','C',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('LJ6H71','M',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('ZPFMAO','D',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('DJORGI','D',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('SUTOP0','C',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('QH38GA','C',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('PJ5A2T','C',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('OOU3EK','C',null);
-insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id) values ('8WDXP4','M',null);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('66CIZA','C',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('0Q5HBR','M',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('PPLA64','D',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('6X3A87','C',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('TWPSVY','M',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('MFD9LH','M',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('F1OSTA','M',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('DVZW87','M',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('5O6IBJ','D',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('7H4HVM','M',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('7ITR2W','C',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('A10NRY','C',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('LJ6H71','M',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('ZPFMAO','D',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('DJORGI','D',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('SUTOP0','C',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('QH38GA','C',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('PJ5A2T','C',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('OOU3EK','C',null,empty_blob(),documento_secciones_num_seq.nextval);
+insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('8WDXP4','M',null,empty_blob(),documento_secciones_num_seq.nextval);
 
 
 -- tarjeta 
