@@ -101,15 +101,34 @@ join presentacion pr
 where nombre='MADDIE' and apellido_paterno='SHIPLEY' 
   and apellido_materno='BELLIVEAU' and sp.descripcion='DEVUELTO';
 
---Consultar el almacen que tenga la mayor cantidad de entrada de productos
+--Consultar el almacen que tenga la mayor cantidad de entrada de 
+--productos
+
+select e.clave_centro_operaciones,e.tipo_almacen,co.latitud,co.longitud,co.telefono_centro_operaciones,sum(e.numero_unidades) SUMA_TOTAL_UNNIDADES
+from v_evento e
+join centro_operaciones co
+  on co.clave_centro_operaciones=e.clave_centro_operaciones
+where e.tipo_evento='ENTRADA'
+group by e.clave_centro_operaciones,e.tipo_almacen,co.latitud,co.longitud,co.telefono_centro_operaciones
+having sum(e.numero_unidades)= (
+  select max(sum(e.numero_unidades)) 
+  from v_evento e
+  where e.tipo_evento='ENTRADA'
+  group by clave_centro_operaciones
+);
+
+
 
 
 --Consultar al cliente cuya tarjeta tenga cierta fecha de expiracion
+select numero_tarjeta,c.cliente_id,c.nombre,c.rfc
+from cliente c
+natural join tarjeta t
+where( t.anio_expiracion=25 and t.mes_expiracion>8) or  t.anio_expiracion>25; 
 
-
---Consultar un descuento que sea del 50%
+--Consultar un descuento que sea mayor o igual del 50%
 select * from ora$ptt_cupon_descuento d
-where d.descuento>50.00;
+where d.descuento>=50.00;
 
 --Consulta que devuelve los pedidos que deben ser retirados del sistema debido
 --a diversas quejas, estos pedidos no deben tener los status capturado,
