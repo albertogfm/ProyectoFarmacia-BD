@@ -51,15 +51,30 @@ select f.clave_centro_operaciones,f.rfc_fiscal, count(*) num_medicina
   where f.rfc_fiscal='RCYO6285480HYZ'
   group by f.clave_centro_operaciones,f.rfc_fiscal;
 
---Consulta que obtiene al empleado con mas eventos en almacen, emplear la vista
--- v_evento
-select emp.empleado_id, emp.nombre, emp.apellidos, e.evento_almacen_id, 
-  e.tipo_evento, oem.operacion_evento_medicamento, oem.numero_unidades
+--Consulta que obtiene a los empleados que tienen mas de 4 eventos en almacen, 
+--emplear la vista v_evento
+select v.evento_medicamento_id,v.tipo_evento,v.rfc,v.clave_centro_operaciones
+from v_evento v
+join (
+  select rfc,count(*) num_eventos
+  from v_evento
+  group by rfc
+  having count(*) > 4
+) q1 
+ on  v.rfc=q1.rfc 
+ order by v.rfc;
 
---Consultar la sustancia activa de un medicamento de nombre , ademas
+--Consultar la sustancia activa de un medicamento de nombre YONDELIS , ademas
 --mostrar todos los nombres que tengan la misma sustancia activa, empleando 
 --la tabla externa
-
+SELECT m.sustancia_activa, n.nombre, m.descripcion
+from medicamento_respaldo m
+left join lista_nombres_respaldo n on n.medicamento_id=m.medicamento_id
+where m.medicamento_id=(
+  select MEDICAMENTO_ID
+  from lista_nombres_respaldo 
+  where nombre='YONDELIS'
+);
 
 --Consultar el numero total de centros de operaciones, empleando el sinonimo
 --cedis
@@ -92,8 +107,8 @@ where nombre='MADDIE' and apellido_paterno='SHIPLEY'
 --Consultar al cliente cuya tarjeta tenga cierta fecha de expiracion
 
 --Consultar un descuento que sea del 50%
-
-
+select * from ora$ptt_cupon_descuento d
+where d.descuento>50.00;
 
 --Consulta que devuelve los pedidos que deben ser retirados del sistema debido
 --a diversas quejas, estos pedidos no deben tener los status capturado,
