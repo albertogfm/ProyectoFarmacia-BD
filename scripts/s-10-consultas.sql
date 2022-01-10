@@ -106,6 +106,7 @@ where nombre='MADDIE' and apellido_paterno='SHIPLEY'
 
 --Consultar al cliente cuya tarjeta tenga cierta fecha de expiracion
 
+
 --Consultar un descuento que sea del 50%
 select * from ora$ptt_cupon_descuento d
 where d.descuento>50.00;
