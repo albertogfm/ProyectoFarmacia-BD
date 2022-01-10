@@ -20,7 +20,7 @@ create or replace procedure sp_actualiza_almacen_dir (v_index in varchar2) is
   v_nombre_archivo varchar2(50);
 begin
     --Nombre Archivo
-    v_nombre_archivo:='auto-'||v_index||'.jpg';
+    v_nombre_archivo:='file-'||v_index||'.pdf';
     dbms_output.put_line('Cargando foto para '||v_nombre_archivo);
     
     --Validando si el archivo existe
