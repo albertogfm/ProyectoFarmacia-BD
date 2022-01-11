@@ -5,7 +5,7 @@ create or replace trigger tr_auditoria_pedido
   for each row
 declare
 v_importe pedido.importe%type;
-v_cliente_id numeric(10,0)
+v_cliente_id numeric(10,0);
 begin
   v_USERNAME := USER; 
   v_importe_actual := NULL; 
@@ -14,7 +14,7 @@ begin
   
   select p.importe, p.cliente_id into v_importe_actual, v_cliente_id
   from pedido p 
-  join cliente c on p.cliente_id=c.cliente_id
+  join cliente c on p.cliente_id=c.cliente_id;
 
   case
     when updating then 
