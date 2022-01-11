@@ -25,7 +25,7 @@ begin
   end case;
     when deleting then
       update pedido set status_pedido =5 where pedido_id = :old.pedido_id;
-     dbms_output.put_line('El usuario que trató de cambiar el importe fue '|| v_USERNAME);
+      dbms_output.put_line('El usuario que trató de eliminar el importe fue '|| v_USERNAME);
 END; 
   /
 show errors
