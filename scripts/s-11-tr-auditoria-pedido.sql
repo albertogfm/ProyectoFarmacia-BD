@@ -14,7 +14,7 @@ begin
 
   case
     when updating then 
-      if :old.importe=!:new.importe then
+      if :old.importe<>:new.importe then
         update pedido set status_pedido =5 where pedido_id = :old.pedido_id;
       end if;
       dbms_output.put_line('El usuario que trató de cambiar el importe fue '|| v_USERNAME);
