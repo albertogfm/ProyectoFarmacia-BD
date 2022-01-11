@@ -1,4 +1,5 @@
-create or replace procedure gen(
+set server output on
+create or replace procedure genera_pedido(
   v_rfc in varchar2,
   status_pedido_id in number
 )
@@ -6,7 +7,7 @@ is
   v_n number(2,0);
   v_pedido_id pedido.pedido_id%type;
   v_folio pedido.folio%type;
-  v_fecha_status pedido.fecha_status%type
+  v_fecha_status pedido.fecha_status%type;
   v_cliente cliente.cliente_id%type;
   v_status pedido.status_pedido_id%type;
   v_fecha_pedido = pedido.fecha_pedido%type;
@@ -33,20 +34,12 @@ begin
 
     dbms_output.put_line("Ingrese la cantidad de medicamentos 
       que vaya a pedir");
-    v_n := &med;
+    v_n := 3
   
     for i in 1..v_n loop
-      dbms_output.put_line("Ingrese el medicamento que va a comprar");
-      v_medicamento := &nom;
-      dbms_output.put_line("Ingrese la clave del tamaño de la dosis");
-      dbms_output.put_line("  XS = 1 pastillas");
-      dbms_output.put_line("  S = 5 pastillas");
-      dbms_output.put_line("  M = 10 pastillas");
-      dbms_output.put_line("  G = 20 pastillas");
-      dbms_output.put_line("  XG = 3O pastillas");
-      v_presentancion = &tam;
-      dbms_output.put_line("Ingrese el numero de unidades de "||v_medicamento);
-      v_unidades= &uni;
+      v_medicamento := "UNAMO";   
+      v_presentancion = "G";
+      v_unidades= 2
       select medicamento_id into v_medicamento_id 
         from lista_nombres_medicamento where nombre=v_medicamento;
       select presentacion_id into v_presentancion_id
