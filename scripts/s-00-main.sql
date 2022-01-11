@@ -14,3 +14,7 @@ connect gaga_proy_admin/gaga
 @s-08-vistas
 @s-03-tablas-temporales
 @s-09-carga-inicial.sql
+@s-11-tr-auditoria-pedido
+@s-11-tr-historico-pedido
+@s-11-tr-historico-ubicacion
+@s-11-tr-inicio-ubicacion
