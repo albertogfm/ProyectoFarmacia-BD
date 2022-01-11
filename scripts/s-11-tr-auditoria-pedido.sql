@@ -4,13 +4,14 @@ create or replace trigger tr_auditoria_pedido
   delete on pedido
   for each row
 declare
-v_importe pedido.importe%type;
-v_cliente_id numeric(10,0);
-begin
+  v_importe pedido.importe%type;
+  v_cliente_id numeric(10,0);
   v_USERNAME := USER; 
   v_importe_actual := NULL; 
   v_importe_anterior := NULL;
   v_fecha_evento := sysdate;
+begin
+  
   
   select p.importe, p.cliente_id into v_importe_actual, v_cliente_id
   from pedido p 
