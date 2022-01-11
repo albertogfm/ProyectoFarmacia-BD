@@ -28,12 +28,23 @@ begin
   values(v_pedido_id, v_folio, v_fecha_pedido,v_fecha_status,v_importe,v_cliente,v_status,null);
 
 
+<<<<<<< HEAD
     v_n := 3;
   
     for i in 1..v_n loop
       v_medicamento := 'UNAMOL';   
       v_presentancion := 'G';
       v_unidades := 2;
+=======
+    dbms_output.put_line("Ingrese la cantidad de medicamentos 
+      que vaya a pedir");
+    v_n := 3
+  
+    for i in 1..v_n loop
+      v_medicamento := "UNAMO";   
+      v_presentancion = "G";
+      v_unidades= 2
+>>>>>>> 8fe5db3c467fd0cd494805bfdf3116155b178506
       select medicamento_id into v_medicamento_id 
         from lista_nombres_medicamento where nombre=v_medicamento;
       select presentacion_id into v_presentancion_id
