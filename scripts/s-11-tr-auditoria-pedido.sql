@@ -12,13 +12,9 @@ declare
   v_fecha_evento := sysdate;
 begin
 
-  select p.importe, p.cliente_id into v_importe_actual, v_cliente_id
-  from pedido p 
-  join cliente c on p.cliente_id=c.cliente_id;
-
   case
     when updating then 
-      if v_importe_actual!=:new.importe then
+      if :old.importe=!:new.importe then
         update pedido set status_pedido =5 where pedido_id = :old.pedido_id;
       end if;
       dbms_output.put_line('El usuario que trató de cambiar el importe fue '|| v_USERNAME);
