@@ -1,52 +1,39 @@
-create or replace procedure gen(
-  v_rfc in varchar2,
-  status_pedido_id in number
+set serveroutput on
+create or replace procedure genera_pedido(
+  v_rfc in varchar2
 )
 is
   v_n number(2,0);
   v_pedido_id pedido.pedido_id%type;
   v_folio pedido.folio%type;
-  v_fecha_status pedido.fecha_status%type
+  v_fecha_status pedido.fecha_status%type;
   v_cliente cliente.cliente_id%type;
   v_status pedido.status_pedido_id%type;
-  v_fecha_pedido = pedido.fecha_pedido%type;
-  v_importe = pedido.importe%type;
-  v_medicamento = varchar2(200);
-  v_presentancion = varchar2(2);
-  v_unidades = number(10,0);
+  v_importe  pedido.importe%type;
+  v_medicamento  varchar2(200);
+  v_presentancion  varchar2(2);
+  v_unidades number(10,0);
   v_medicamento_id medicamento.medicamento_id%type;
   v_presentancion_id number(10,0);
+  v_fecha_pedido date;
 begin
-  select pedido_seq into v_pedido_id from dual; 
+  select pedido_seq.nextval into v_pedido_id from dual; 
   select cliente_id into v_cliente from cliente where rfc = v_rfc;
   v_folio := DBMS_RANDOM.string('u',13);
   v_importe:= dbms_random.value(1000,5000);
   v_fecha_pedido := sysdate;
   v_fecha_status := sysdate;
   v_status := 1;
-  
-  insert into pedido (pedido_id,folio,feche_pedido,importe,
-    fecha_status,cliente_id,status_pedido_id)
-  values(v_pedido_id,v_folio,v_feche_pedido,v_importe,
-    v_fecha_status,v_cliente_id,v_status_pedido_id);
+  insert into pedido(pedido_id, folio, fecha_pedido,fecha_status,importe,cliente_id,status_pedido_id,ubicacion_actual_id) 
+  values(v_pedido_id, v_folio, v_fecha_pedido,v_fecha_status,v_importe,v_cliente,v_status,null);
 
 
-    dbms_output.put_line("Ingrese la cantidad de medicamentos 
-      que vaya a pedir");
-    v_n := &med;
+    v_n := 3;
   
     for i in 1..v_n loop
-      dbms_output.put_line("Ingrese el medicamento que va a comprar");
-      v_medicamento := &nom;
-      dbms_output.put_line("Ingrese la clave del tamaño de la dosis");
-      dbms_output.put_line("  XS = 1 pastillas");
-      dbms_output.put_line("  S = 5 pastillas");
-      dbms_output.put_line("  M = 10 pastillas");
-      dbms_output.put_line("  G = 20 pastillas");
-      dbms_output.put_line("  XG = 3O pastillas");
-      v_presentancion = &tam;
-      dbms_output.put_line("Ingrese el numero de unidades de "||v_medicamento);
-      v_unidades= &uni;
+      v_medicamento := 'UNAMOL';   
+      v_presentancion := 'G';
+      v_unidades := 2;
       select medicamento_id into v_medicamento_id 
         from lista_nombres_medicamento where nombre=v_medicamento;
       select presentacion_id into v_presentancion_id
