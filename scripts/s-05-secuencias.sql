@@ -1,7 +1,7 @@
 --@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
---@Fecha creación: 05/01/2022
---@Descripción: Este archivo contiene la creación de los índices para 
---el proyecto Pharmacy Online (DDL)
+--@Fecha creación: 04/01/2022
+--@Descripción: En este script definimos las secuencias que ayudaraán a mantener
+--el control en el numero de registros de cada llave primaria de una tabla.
 
 create sequence farmacia_medicamento_seq
   start with 1

@@ -1,3 +1,9 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: En este script, definimos las vistas del proyecto que nos 
+--ayudan a simplificar la consulta de datos. 
+
+
 create or replace view v_cliente_tarjeta(
   cliente_id, nombre, apellido_paterno, apellido_materno, rfc, email, 
     numero_tarjeta

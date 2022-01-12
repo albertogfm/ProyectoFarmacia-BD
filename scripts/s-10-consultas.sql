@@ -1,3 +1,10 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: En este script, se desarrollaron algunas consultas que nosotros
+--propusimos de acuerdo a las reglas de negocio que se establecieron en el caso
+--de estudio
+
+
 
 --Consulta que obtiene los detalles del pedido más caro del cliente ROB 
 --LIVINGSTONE BAMBROUGH, además de obtener los detalles de su tarjeta con la que 

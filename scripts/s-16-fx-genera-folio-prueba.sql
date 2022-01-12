@@ -1,3 +1,6 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: Prueba función que genera folios.
 declare
   v_folio pedido.folio%type;
 begin

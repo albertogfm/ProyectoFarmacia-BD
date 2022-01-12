@@ -1,3 +1,9 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción:En este procedimiento se generan los pedidos de acuerdo a un 
+--medicamento y cantidad especificada.
+
+
 set serveroutput on
 create or replace procedure genera_pedido(
   v_rfc in varchar2

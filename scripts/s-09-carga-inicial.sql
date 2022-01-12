@@ -1,3 +1,12 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: En este script realizamos la insercion de algunos registros en 
+--todas las entidades que conforman este proyecto.
+
+
+
+
+
 ---CENTRO OPERACIONES
 PROMPT CREANDO CENTRO OPERACIONES
 insert into centro_operaciones(clave_centro_operaciones,direccion,latitud,longitud,telefono_centro_operaciones) values ('VV4SMV','05281 Hazelcrest Crossing',31.220367,121.424624,4087921883);

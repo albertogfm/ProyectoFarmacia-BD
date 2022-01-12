@@ -1,6 +1,7 @@
 --@Autor:  GARCIA FIGUEROA MUNGUIA ALBERTO y GARCIA GUTIERREZ EDGAR CRISTOBAL
---@Fecha creación: 30/12/2021
---@Descripción: Creación de usuario Practica 12
+--@Fecha creación: 04/01/2022
+--@Descripción: Definición del script que carga archivos binarios, 
+--en este caso fotos
 
 prompt Configurando directorio
 conn sys/system as sysdba

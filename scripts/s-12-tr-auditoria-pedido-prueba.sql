@@ -1,3 +1,7 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción:Prueba del trigger auditoria_prueba
+
 declare
   v_importe number;
   v_importe_antes number;

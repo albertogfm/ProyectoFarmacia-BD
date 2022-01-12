@@ -1,3 +1,8 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: El script contiene la declaración de la tabla temporal externa 
+-- que obtiene los datos de un CSV, dicha tabla externa nos ayuda a inicar una 
+--carga de datos a la tabla de medicamento a través de un cursor.
 
 --Creando tabla con los nombres del medicamento
 prompt Conectando como sys

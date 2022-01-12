@@ -1,5 +1,13 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: En este archivo se definen los sinonimos de algunas tablas para 
+--simplificar alguna operación que se tengan que realizar sobre los datos de
+--ellas.
+
+
 prompt creando sinonimos publicos
-create or replace public synonym detalle_evento for operacion_evento_medicamento;
+create or replace public synonym detalle_evento for 
+  operacion_evento_medicamento;
 create or replace public synonym medicina for medicamento ;
 create or replace public synonym cedis for centro_operaciones ;
 

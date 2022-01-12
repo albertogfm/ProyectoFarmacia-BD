@@ -1,3 +1,10 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción:En este trigger actualizamos el historico de la tabla pedido por 
+--cada cambio de ubicacion que exista en dicha tabla. 
+
+
+
 create or replace trigger tr_ubicacion
   after insert or update of ubicacion_actual_id on pedido
   for each row

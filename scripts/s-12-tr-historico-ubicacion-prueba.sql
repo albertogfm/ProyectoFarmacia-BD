@@ -1,3 +1,8 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: Prueba del trigger historico_ubicacion
+
+
 declare
 begin
   --Actualizando un registro para que capture la ubicación actual 

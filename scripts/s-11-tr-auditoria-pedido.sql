@@ -1,3 +1,10 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: El trigger tiene como objetivo notificar y rechazar 
+--cualquier cambio que se haya intentado realizar a la columna importe de la 
+--tabla pedido para realizar una auditoria.
+
+
 create or replace trigger tr_auditoria_pedido
   after 
   update of importe  on pedido
@@ -13,8 +20,10 @@ begin
   v_USERNAME := USER; 
 
     if v_importe_actual<>v_importe_nuevo then
-      dbms_output.put_line('El usuario que trató de cambiar el importe fue '|| v_USERNAME);
-      raise_application_error(-20001,'se intento cambiar el importe de un pedido');
+      dbms_output.put_line('El usuario que trató de cambiar el importe fue '
+      || v_USERNAME);
+      raise_application_error(-20001,
+      'se intento cambiar el importe de un pedido');
     end if;
 
 END; 

@@ -1,3 +1,9 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: Función que indica el numeró de medicamentos existentes en un 
+--almacen
+
+
 create or replace function medicamento_almacen
 (p_clave_almacen in almacen.clave_centro_operaciones%type)
 return number

@@ -1,3 +1,8 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción:Prueba del trigger historico_pedido
+
+
 declare
   v_pedido_id pedido.pedido_id%type;
   v_folio pedido.folio%type;

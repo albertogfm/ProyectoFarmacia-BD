@@ -1,3 +1,10 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción:En este procedimiento se crea un usuario, el cual podrá realizar 
+--pedidos
+
+
+
 create or replace procedure createUser(
     v_nombre in varchar2,v_apellido_paterno in varchar2,v_apellido_materno in varchar2,
     v_rfc in varchar2, v_direccion in varchar2, v_telefono in number, v_email in varchar2,

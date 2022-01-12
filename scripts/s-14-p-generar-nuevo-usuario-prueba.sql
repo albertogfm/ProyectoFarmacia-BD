@@ -1,3 +1,6 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: Prueba procedimiento create_user.
 declare 
   v_estado number(10,0) := -1 ;
 begin

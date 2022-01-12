@@ -1,3 +1,8 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: Función que calcula el total a pagar de un cliente de acuerdo
+--al importe de sus pedidos.
+
 create or replace function pago_cliente(p_cliente_id cliente.cliente_id%type)
 return number
 is

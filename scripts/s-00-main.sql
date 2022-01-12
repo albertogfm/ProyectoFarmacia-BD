@@ -1,3 +1,7 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción: Este archivo contiene ejecución de todos los scripts que 
+--solicita el proyecto
 @s-01-usuarios.sql
 Prompt Conectando a usuario gaga_proy_admin 
 connect gaga_proy_admin/gaga

@@ -1,3 +1,9 @@
+--@Autor(es): García Figueroa Munguía Alberto, Garcia Gutiérrez Edgar Cristóbal 
+--@Fecha creación: 04/01/2022
+--@Descripción:En este trigger se genera una nueva ubicación por cada cambio de 
+--status en el pedido, de esta manera se podrá generar ubicaciones aleatorias y
+--así simular una entrega
+
 create or replace trigger tr_inicio_ubicacion
   after update of status_pedido_id on pedido
   for each row
