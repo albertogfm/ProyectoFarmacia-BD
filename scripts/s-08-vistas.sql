@@ -3,6 +3,7 @@
 --@Descripción: En este script, definimos las vistas del proyecto que nos 
 --ayudan a simplificar la consulta de datos. 
 
+Prompt ========CREANDO VISTAS========
 
 create or replace view v_cliente_tarjeta(
   cliente_id, nombre, apellido_paterno, apellido_materno, rfc, email, 
@@ -49,11 +50,3 @@ create or replace view v_pedido(
      on mp.presentacion_id=pr.presentacion_id
    join medicamento m 
      on mp.medicamento_id=m.medicamento_id;
-
--- create or replace v_empleado_menor_antiguedad(
- 
--- )as select empleado_id, clave_centro_operaciones,min(fecha_ingreso)
---   from empleado e
---   join farmacia f
---     on e.clave_centro_operaciones=f.clave_centro_operaciones
---     group by empleado_id,clave_centro_operaciones;

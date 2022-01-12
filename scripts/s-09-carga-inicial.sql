@@ -8,7 +8,7 @@
 
 
 ---CENTRO OPERACIONES
-PROMPT CREANDO CENTRO OPERACIONES
+PROMPT ============== CREANDO CENTRO OPERACIONES
 insert into centro_operaciones(clave_centro_operaciones,direccion,latitud,longitud,telefono_centro_operaciones) values ('VV4SMV','05281 Hazelcrest Crossing',31.220367,121.424624,4087921883);
 insert into centro_operaciones(clave_centro_operaciones,direccion,latitud,longitud,telefono_centro_operaciones) values ('Q1TK1R','214 Dahle Hill',21.1078535,-101.694732,3137174118);
 insert into centro_operaciones(clave_centro_operaciones,direccion,latitud,longitud,telefono_centro_operaciones) values ('OKU3TZ','2940 Westend Point',29.7286909,115.9990815,9081627383);
@@ -61,7 +61,7 @@ insert into centro_operaciones(clave_centro_operaciones,direccion,latitud,longit
 insert into centro_operaciones(clave_centro_operaciones,direccion,latitud,longitud,telefono_centro_operaciones) values ('8WDXP4','535 Badeau Alley',36.4056598,58.0384692,5123043030);
 
 --OFICINA
-PROMPT CREANDO OFICINA
+PROMPT ============== CREANDO OFICINA
 insert into oficina (clave_centro_operaciones,clave,numero_oficina,nombre) values('VV4SMV',53768,5635,'Reinke');
 insert into oficina (clave_centro_operaciones,clave,numero_oficina,nombre) values('Q1TK1R',21661,65,'Buhler');
 insert into oficina (clave_centro_operaciones,clave,numero_oficina,nombre) values('OKU3TZ',30679,8738,'Summit');
@@ -79,7 +79,7 @@ insert into oficina (clave_centro_operaciones,clave,numero_oficina,nombre) value
 insert into oficina (clave_centro_operaciones,clave,numero_oficina,nombre) values('7Z6HPG',28120,734,'Dayton');
 
 ---FARMACIA
-PROMPT CREANDO FARMACIA
+PROMPT ============== CREANDO FARMACIA
 insert into farmacia (clave_centro_operaciones,rfc_fiscal,url) values ('ISX4YK','SUZB0448075YKQ','http://dummyimage.com/230x100.png/5fa2dd/ffffff');
 insert into farmacia (clave_centro_operaciones,rfc_fiscal,url) values ('1NAW50','BGJS3875964RAO','http://dummyimage.com/248x100.png/cc0000/ffffff');
 insert into farmacia (clave_centro_operaciones,rfc_fiscal,url) values ('MOCQFA','EJNO9908837FVQ','http://dummyimage.com/208x100.png/ff4444/ffffff');
@@ -97,7 +97,7 @@ insert into farmacia (clave_centro_operaciones,rfc_fiscal,url) values ('3YURG8',
 insert into farmacia (clave_centro_operaciones,rfc_fiscal,url) values ('XFVDO5','PTZZ5458515REL','http://dummyimage.com/158x100.png/dddddd/000000');
 
 --ALMACEN
-PROMPT CREANDO ALMACEN
+PROMPT ============== CREANDO ALMACEN
 insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('66CIZA','C',null,empty_blob(),documento_secciones_num_seq.nextval);
 insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('0Q5HBR','M',null,empty_blob(),documento_secciones_num_seq.nextval);
 insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_id,documento_secciones,documento_secciones_num) values ('PPLA64','D',null,empty_blob(),documento_secciones_num_seq.nextval);
@@ -121,7 +121,7 @@ insert into almacen (clave_centro_operaciones,tipo_almacen,almacen_contigencia_i
 
 
 -- tarjeta 
-PROMPT CREANDO TARJETA
+PROMPT ============== CREANDO TARJETA
 insert into tarjeta (numero_tarjeta,anio_expiracion,mes_expiracion) values('2776512467187991','25','8');
 insert into tarjeta (numero_tarjeta,anio_expiracion,mes_expiracion) values('5878830680065951','27','5');
 insert into tarjeta (numero_tarjeta,anio_expiracion,mes_expiracion) values('3096587205286629','22','12');
@@ -137,7 +137,7 @@ insert into tarjeta (numero_tarjeta,anio_expiracion,mes_expiracion) values('7834
 
 
 --CLIENTE
-PROMPT CREANDO CLIENTE
+PROMPT ============== CREANDO CLIENTE
 insert into cliente (cliente_id,nombre,apellido_paterno,apellido_materno,curp,rfc,direccion,telefono,email,numero_tarjeta) values(cliente_seq.nextval,'RYON','TERRETT','CICCARELLI','QNQPFNOSKOSKNTTF2R','EBAFVM63I72MP','0 Arrowood Way',3319624996,'rciccarelli0@ed.gov','2776512467187991');
 insert into cliente (cliente_id,nombre,apellido_paterno,apellido_materno,curp,rfc,direccion,telefono,email,numero_tarjeta) values(cliente_seq.nextval,'LENORA','SARVAR','DI MATTEO','RIBI0QGO7CGIYWKJVA','QII8TH4B89AYL','0254 Iowa Hill',5403446961,'ldimatteo1@mashable.com','5878830680065951');
 insert into cliente (cliente_id,nombre,apellido_paterno,apellido_materno,curp,rfc,direccion,telefono,email,numero_tarjeta) values(cliente_seq.nextval,'MENDEL','PLOWRIGHT','MOIR','JHVJFB2C5KUONIOSUG','PETIOWVXOEC88','47 Westridge Alley',3233940585,'mmoir2@who.int','3096587205286629');
@@ -156,7 +156,7 @@ insert into cliente (cliente_id,nombre,apellido_paterno,apellido_materno,curp,rf
 
 
 --EMPLEADO
-PROMPT CREANDO EMPLEADO
+PROMPT ============== CREANDO EMPLEADO
 insert into empleado(empleado_id, nombre, apellidos, fecha_ingreso,rfc,clave_centro_operaciones) values(empleado_seq.nextval,'Christye','Damper',to_date('09/09/2020','mm/dd/yyyy'),'RZOL513565DC8','ISX4YK');
 insert into empleado(empleado_id, nombre, apellidos, fecha_ingreso,rfc,clave_centro_operaciones) values(empleado_seq.nextval,'Annabal','Thrussell',to_date('02/17/2021','mm/dd/yyyy'),'WKXP379744780','1NAW50');
 insert into empleado(empleado_id, nombre, apellidos, fecha_ingreso,rfc,clave_centro_operaciones) values(empleado_seq.nextval,'Hank','Andreia',to_date('12/24/2019','mm/dd/yyyy'),'KIKU814882XAR','MOCQFA');
@@ -219,7 +219,7 @@ insert into empleado(empleado_id, nombre, apellidos, fecha_ingreso,rfc,clave_cen
 insert into empleado(empleado_id, nombre, apellidos, fecha_ingreso,rfc,clave_centro_operaciones) values(empleado_seq.nextval,'Jannelle','Goodbur',to_date('05/01/2018','mm/dd/yyyy'),'FEHV7955355MV','XFVDO5');
 
 --STATUS_PEDIDO
-PROMPT CREANDO STATUS PEDIDO
+PROMPT ============== CREANDO STATUS PEDIDO
 insert into status_pedido(status_pedido_id,clave,descripcion) values(1,'CAP','CAPTURADO');
 insert into status_pedido(status_pedido_id,clave,descripcion) values(2,'TRT','EN TRANSITO');
 insert into status_pedido(status_pedido_id,clave,descripcion) values(3,'ETG','ENTREGADO');
@@ -227,7 +227,7 @@ insert into status_pedido(status_pedido_id,clave,descripcion) values(4,'DVT','DE
 insert into status_pedido(status_pedido_id,clave,descripcion) values(5,'CLD','CANCELADO');
 
 --PRESENTACION
-PROMPT CREANDO PRESENTACION
+PROMPT ============== CREANDO PRESENTACION
 insert into presentacion(presentacion_id,clave,unidades) values(1,'XS',1);
 insert into presentacion(presentacion_id,clave,unidades) values(2,'S',5);
 insert into presentacion(presentacion_id,clave,unidades) values(3,'M',10);
@@ -235,7 +235,7 @@ insert into presentacion(presentacion_id,clave,unidades) values(4,'G',20);
 insert into presentacion(presentacion_id,clave,unidades) values(5,'XG',30);
 
 --UBICACION ACTUAL
-PROMPT CREANDO UBICACION ACTUAL
+PROMPT ============== CREANDO UBICACION ACTUAL
 insert into ubicacion_actual(ubicacion_actual_id,latitud,longitud) values (ubicacion_actual_seq.nextval,4.9227114,97.7240183);
 insert into ubicacion_actual(ubicacion_actual_id,latitud,longitud) values (ubicacion_actual_seq.nextval,43.357629,52.8434912);
 insert into ubicacion_actual(ubicacion_actual_id,latitud,longitud) values (ubicacion_actual_seq.nextval,27.392669,87.2120599);
@@ -488,7 +488,7 @@ insert into ubicacion_actual(ubicacion_actual_id,latitud,longitud) values (ubica
 insert into ubicacion_actual(ubicacion_actual_id,latitud,longitud) values (ubicacion_actual_seq.nextval,-20.2884188,57.3779066);
 
 --FARMACIA MEDICAMENTO
-PROMPT CREANDO FARMACIA MEDICAMENTO
+PROMPT ============== CREANDO FARMACIA MEDICAMENTO
 
 insert into farmacia_medicamento(farmacia_medicamento_id,numero_unidades,clave_centro_operaciones,medicamento_id) values (farmacia_medicamento_seq.nextval,53,'MOCQFA',248);
 insert into farmacia_medicamento(farmacia_medicamento_id,numero_unidades,clave_centro_operaciones,medicamento_id) values (farmacia_medicamento_seq.nextval,86,'WW2169',444);
@@ -532,7 +532,7 @@ insert into farmacia_medicamento(farmacia_medicamento_id,numero_unidades,clave_c
 insert into farmacia_medicamento(farmacia_medicamento_id,numero_unidades,clave_centro_operaciones,medicamento_id) values (farmacia_medicamento_seq.nextval,24,'IXS8YC',936); 
 
 --MEDICAMENTO PRESENTACION
-PROMPT CREANDO MEDICAMENTO PRESENTACION
+PROMPT ============== CREANDO MEDICAMENTO PRESENTACION
 
 insert into medicamento_presentacion(medicamento_presentacion_id,presentacion_id,medicamento_id) values (medicamento_presentacion_seq.nextval,1,1054);
 insert into medicamento_presentacion(medicamento_presentacion_id,presentacion_id,medicamento_id) values (medicamento_presentacion_seq.nextval,5,573);
@@ -736,7 +736,7 @@ insert into medicamento_presentacion(medicamento_presentacion_id,presentacion_id
 insert into medicamento_presentacion(medicamento_presentacion_id,presentacion_id,medicamento_id) values (medicamento_presentacion_seq.nextval,1,941);
 
 --EVENTO ALMACEN
-PROMPT CREANDO EVENTO ALMACEN
+PROMPT ============== CREANDO EVENTO ALMACEN
 
 insert into evento_almacen(evento_almacen_id,fecha_evento,tipo_evento,clave_centro_operaciones,empleado_id) values(evento_almacen_seq.nextval,to_date('05/10/2021','dd/mm/yyyy'),'SALIDA','66CIZA',34);
 insert into evento_almacen(evento_almacen_id,fecha_evento,tipo_evento,clave_centro_operaciones,empleado_id) values(evento_almacen_seq.nextval,to_date('30/10/2021','dd/mm/yyyy'),'SALIDA','0Q5HBR',6);
@@ -780,7 +780,7 @@ insert into evento_almacen(evento_almacen_id,fecha_evento,tipo_evento,clave_cent
 insert into evento_almacen(evento_almacen_id,fecha_evento,tipo_evento,clave_centro_operaciones,empleado_id) values(evento_almacen_seq.nextval,to_date('09/07/2021','dd/mm/yyyy'),'SALIDA','8WDXP4',11);
 
 --OPERACION EVENTO MEDICAMENTO
-PROMPT CREANDO OPERACION EVENTO MEDICAMENTO
+PROMPT ============== CREANDO OPERACION EVENTO MEDICAMENTO
 insert into operacion_evento_medicamento(evento_medicamento_id,numero_unidades,evento_almacen_id,medicamento_presentacion_id) values(operacion_evento_medicamento_seq.nextval,780,14,17);
 insert into operacion_evento_medicamento(evento_medicamento_id,numero_unidades,evento_almacen_id,medicamento_presentacion_id) values(operacion_evento_medicamento_seq.nextval,72,34,96);
 insert into operacion_evento_medicamento(evento_medicamento_id,numero_unidades,evento_almacen_id,medicamento_presentacion_id) values(operacion_evento_medicamento_seq.nextval,371,33,143);
@@ -844,7 +844,7 @@ insert into operacion_evento_medicamento(evento_medicamento_id,numero_unidades,e
 
 
 --PEDIDO
-PROMPT CREANDO PEDIDO
+PROMPT ============== CREANDO PEDIDO
 
 insert into pedido(pedido_id, folio, fecha_pedido,fecha_status,importe,cliente_id,status_pedido_id,ubicacion_actual_id) values(pedido_seq.nextval,'EMYY04LL4YXYE',to_date('07/09/2019','dd/mm/yyyy'),to_date('25/12/2020','dd/mm/yyyy'),2751.99,1,2,97);
 insert into pedido(pedido_id, folio, fecha_pedido,fecha_status,importe,cliente_id,status_pedido_id,ubicacion_actual_id) values(pedido_seq.nextval,'Y2OZMWJAJ299I',to_date('18/07/2020','dd/mm/yyyy'),to_date('24/04/2021','dd/mm/yyyy'),2102.65,1,1,null);
@@ -898,7 +898,7 @@ insert into pedido(pedido_id, folio, fecha_pedido,fecha_status,importe,cliente_i
 insert into pedido(pedido_id, folio, fecha_pedido,fecha_status,importe,cliente_id,status_pedido_id,ubicacion_actual_id) values(pedido_seq.nextval,'XLLU5804NXX7W',to_date('06/07/2021','dd/mm/yyyy'),to_date('03/04/2021','dd/mm/yyyy'),3947.34,10,1,null);
 
 --PEDIDO_MEDICAMENTO
-PROMPT CREANDO PEDIDO_MEDICAMENTO
+PROMPT ============== CREANDO PEDIDO_MEDICAMENTO
 
 insert into pedido_medicamento(pedido_medicamento_id, clave_centro_operaciones,numero_unidades,pedido_id,medicamento_presentacion_id) values(pedido_medicamento_seq.nextval,'ISX4YK',17,1,41);
 insert into pedido_medicamento(pedido_medicamento_id, clave_centro_operaciones,numero_unidades,pedido_id,medicamento_presentacion_id) values(pedido_medicamento_seq.nextval,'1NAW50',10,31,96);
@@ -1070,7 +1070,7 @@ insert into historico_status_pedido(historico_status_pedido_id,fecha_status,pedi
 insert into historico_status_pedido(historico_status_pedido_id,fecha_status,pedido_id,status_pedido_id) values(historico_status_pedido_seq.nextval,to_date('28/10/2021','dd/mm/yy'),6,1);
 
 
-PROMPT Insertando cupones
+PROMPT ============== Insertando cupones
 insert into ora$ptt_cupon_descuento(cupon_descuento_id, descuento, detalle) values(1,50.00,'Descuento del 50%');
 insert into ora$ptt_cupon_descuento(cupon_descuento_id, descuento, detalle) values(2,75.00,'Descuento del 75%');
 insert into ora$ptt_cupon_descuento(cupon_descuento_id, descuento, detalle) values(3,60.00,'Descuento del 60%');

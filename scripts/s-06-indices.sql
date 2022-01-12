@@ -12,11 +12,14 @@ create unique index farmacia_rfc_iuk
 create unique index cliente_rfc_iuk 
   on cliente(upper(rfc));
 
-create index oficina_nombre_clave_ix 
-  on oficina(upper(nombre));
-
 create unique index empleado_rfc_iuk 
   on empleado(upper(rfc));
+
+create unique index folio_pedido_ix
+  on pedido(folio);
+
+create index oficina_nombre_clave_ix 
+  on oficina(upper(nombre));
 
 create index medicamento_nombre_sustancia_ix 
   on medicamento(upper(sustancia_activa));
@@ -27,5 +30,3 @@ create index lista_nombres_medicamento_ix
 create index centro_operaciones_telefono_ix
   on centro_operaciones(telefono_centro_operaciones);
 
-create unique index folio_pedido_ix
-  on pedido(folio);

@@ -3,6 +3,7 @@
 --@Descripción: Este archivo contiene la creación de las tablas para 
 --el proyecto Pharmacy Online (DDL)
 
+Prompt =====INICIANDO CREACION DE TABLAS=====
 create table centro_operaciones(
   clave_centro_operaciones varchar2(6) not null,
   direccion varchar2(35) not null,
@@ -25,7 +26,7 @@ create table oficina(
 
 create table farmacia(
   clave_centro_operaciones varchar2(6) not null,
-  rfc_fiscal varchar2(14) not null,
+  rfc_fiscal varchar2(14) not null constraint farmacia_rfc_fiscal_uk unique,
   url varchar2(200) not null,
   constraint farmacia_pk primary key (clave_centro_operaciones),
   constraint farmacia_clave_centro_operaciones_fk 
@@ -56,7 +57,7 @@ create table medicamento(
 
 create table lista_nombres_medicamento(
   lista_nombres_medicamento_id number(10,0) not null,
-  nombre varchar2(100) not null,
+  nombre varchar2(100) not null constraint lnm_nombre_uk unique,
   medicamento_id number(10,0) not null,
   constraint lista_nombres_medicamento_pk 
     primary key (lista_nombres_medicamento_id),
@@ -85,7 +86,7 @@ create table empleado(
   nombre varchar2(50) not null,
   apellidos varchar2(50) not null,
   fecha_ingreso date not null,
-  rfc varchar2(13) not null,
+  rfc varchar2(13) not null constraint empleado_rfc_uk unique,
   clave_centro_operaciones varchar2(6) not null,
   constraint empleado_pk primary key (empleado_id),
   constraint emp_clave_centro_operaciones_fk 
@@ -112,9 +113,6 @@ create table medicamento_presentacion(
   constraint mp_medicamento_id_fk 
     foreign key(medicamento_id) 
     references medicamento(medicamento_id)
---   constraint mp_pedido_medicamento_id_fk
---     foreign key (pedido_medicamento_id)
---     references pedido_medicamento(pedido_medicamento_id)
 );
 
 
@@ -177,11 +175,11 @@ create table cliente(
   nombre varchar2(20) not null,
   apellido_paterno varchar2(20),
   apellido_materno varchar2(20) not null,
-  curp varchar2(18) null,
-  rfc varchar2(13) not null,
+  curp varchar2(18) null constraint cliente_curp_uk unique,
+  rfc varchar2(13) not null constraint cliente_rfc_uk unique,
   direccion varchar2(100) null,
   telefono number(10,0) not null,
-  email varchar2(80) not null,
+  email varchar2(80) not null constraint cliente_email_uk unique,
   numero_tarjeta varchar2(16) not null,
   constraint cliente_pk primary key (cliente_id),
   constraint cliente_numero_tarjeta_fk
@@ -288,7 +286,6 @@ alter table cliente add constraint cliente_telefono_chk
   check (length(telefono)=10);
 
 
-
 alter table centro_operaciones add constraint cp_telefono_cp_chk
   check (length(telefono_centro_operaciones)=10);
 
@@ -307,9 +304,5 @@ alter table farmacia add constraint farmacia_rfc_fiscal_chk
 alter table pedido add constraint pedido_importe_chk
   check (importe>0);
 
--- alter table pedido add constraint pedido_status_pedido_chk
---   check(((status_pedido_id=2 or status_pedido_id = 3) 
---   and ubicacion_actual_id is not null)
---   OR ((status_pedido_id=1 or status_pedido_id = 4 or status_pedido_id = 5) 
---   and ubicacion_actual_id is null));
 
+Prompt =====FINALIZANDO CREACION DE TABLAS=====

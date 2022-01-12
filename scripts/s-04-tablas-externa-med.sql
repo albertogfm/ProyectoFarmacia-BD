@@ -8,10 +8,10 @@
 prompt Conectando como sys
 connect sys/system as sysdba
 prompt creando directorio tmp_dir
-create or replace directory tmp_dir 
-  as '/tmp/bases';
+create or replace directory tmp_dir as '/tmp/bases';
 
 grant read, write on directory tmp_dir to gaga_proy_admin;
+
 prompt Contectando con usuario gaga_proy_admin para crear la tabla externa
 connect gaga_proy_admin/gaga
 show user
@@ -41,6 +41,8 @@ organization external (
 )
 reject limit unlimited;
 
+
+Prompt =========LLENANDO TABLA MEDICAMENTO CON LA EXTERNA==========
 declare
 --Declarando cursor
 v_lista_nombres_medicamento_id number(5,0);
