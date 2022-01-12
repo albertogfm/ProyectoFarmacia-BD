@@ -5,7 +5,7 @@
 
 create table centro_operaciones(
   clave_centro_operaciones varchar2(6) not null,
-  direccion blob null,
+  direccion varchar2 not null,
   latitud number(11,8) not null,
   longitud number(11,8) not null,
   telefono_centro_operaciones number(10,0) not null,
@@ -36,7 +36,7 @@ create table farmacia(
 create table almacen(
   clave_centro_operaciones varchar2(6) not null,
   tipo_almacen char(1) not null,
-  documento_secciones blob null,
+  documento_secciones blob not null,
   documento_secciones_num numeric(10,0) not null constraint almacen_doc_sec_num_uk unique,
   almacen_contigencia_id varchar2(6),
   constraint almacen_pk primary key (clave_centro_operaciones),

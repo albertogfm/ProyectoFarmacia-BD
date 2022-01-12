@@ -37,7 +37,7 @@ begin
     v_n := 3
   
     for i in 1..v_n loop
-      v_medicamento := "UNAMO";   
+      v_medicamento := "UNAMOL";   
       v_presentancion = "G";
       v_unidades= 2
       select medicamento_id into v_medicamento_id 
