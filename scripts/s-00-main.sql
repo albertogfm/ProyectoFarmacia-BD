@@ -18,3 +18,16 @@ connect gaga_proy_admin/gaga
 @s-11-tr-historico-pedido
 @s-11-tr-historico-ubicacion
 @s-11-tr-inicio-ubicacion
+
+
+@s-12-tr-auditoria-pedido-prueba
+@s-12-tr-historico-pedido-prueba
+@s-12-tr-historico-ubicacion-prueba
+
+
+@s-13-p-genera-pedido
+@s-13-p-genera-nuevo-usuario
+
+@s-14-p-genera-pedido-prueba
+
+

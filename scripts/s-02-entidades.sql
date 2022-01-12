@@ -5,7 +5,7 @@
 
 create table centro_operaciones(
   clave_centro_operaciones varchar2(6) not null,
-  direccion varchar2 not null,
+  direccion varchar2(35) not null,
   latitud number(11,8) not null,
   longitud number(11,8) not null,
   telefono_centro_operaciones number(10,0) not null,
@@ -177,7 +177,7 @@ create table cliente(
   nombre varchar2(20) not null,
   apellido_paterno varchar2(20),
   apellido_materno varchar2(20) not null,
-  curp varchar2(18) not null,
+  curp varchar2(18) null,
   rfc varchar2(13) not null,
   direccion varchar2(100) null,
   telefono number(10,0) not null,

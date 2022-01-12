@@ -3,9 +3,10 @@ return number
 is
   v_sumapagos number(10,0) := 0;
 begin
-  select sum(cantidad) into v_sumapagos
+  select sum(importe) into v_sumapagos
   from pedido
-  where codigocliente = p_cliente_id;
+  where cliente_id = p_cliente_id;
   return v_sumapagos;
 end;
 /
+show errors
