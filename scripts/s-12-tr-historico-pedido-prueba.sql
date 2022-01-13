@@ -15,7 +15,7 @@ declare
 begin
   --Insertando un registro para que capture el estado capturado
   select dbms_random.value(1500,2000) into v_pedido_id from dual;
-  v_folio := '0123456689HAM';
+  v_folio := genera_folio();
   v_fecha_pedido := sysdate;
   select dbms_random.value(1500,2000) into v_importe from dual;
   v_fecha_status := sysdate;

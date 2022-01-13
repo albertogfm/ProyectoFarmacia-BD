@@ -41,7 +41,7 @@ end;
 /
 set linesize window
 
- medicamento_id clear
+
 col sustancia_activa format a30
 col descripcion format a55
 col medicamento_id heading med_id

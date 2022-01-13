@@ -22,8 +22,7 @@ begin
     if v_importe_actual<>v_importe_nuevo then
       dbms_output.put_line('El usuario que trató de cambiar el importe fue '
       || v_USERNAME);
-      raise_application_error(-20001,
-      'se intento cambiar el importe de un pedido');
+      raise_application_error(-20001,'Se intento cambiar el importe de un pedido');
     end if;
 
 END; 
