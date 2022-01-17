@@ -3,8 +3,13 @@
 --@Descripción: Definición del script que carga archivos binarios, 
 --en este caso fotos
 
+!mkdir /tmp/bases/direccion_files
+!cp -r ../documentacion/direccion_files /tmp/bases
+!chmod 777 /tmp/bases/direccion_files
+
 prompt Configurando directorio
 conn sys/system as sysdba
+
 create or replace directory dir_files as '/tmp/bases/direccion_files';
 grant read, write on directory dir_files to gaga_proy_admin;
 

@@ -5,6 +5,12 @@
 --carga de datos a la tabla de medicamento a través de un cursor.
 
 --Creando tabla con los nombres del medicamento
+!mkdir /tmp/bases
+!cp ../documentacion/medicamento.csv /tmp/bases
+!chmod 777 /tmp/bases
+
+
+
 prompt Conectando como sys
 connect sys/system as sysdba
 prompt creando directorio tmp_dir
