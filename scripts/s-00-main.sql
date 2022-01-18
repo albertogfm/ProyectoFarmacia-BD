@@ -33,6 +33,7 @@ Prompt =====CREANDO TABLAS TEMPORALES=====
 Prompt =====CARGA INICIAL=====
 @s-09-carga-inicial.sql
 
+@s-10-consultas
 
 
 

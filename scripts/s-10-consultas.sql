@@ -127,7 +127,8 @@ having sum(e.numero_unidades)= (
 
 
 
---Consultar al cliente cuya tarjeta tenga cierta fecha de expiracion
+--Consultar al cliente cuya tarjeta tenga su fecha de expiracion mayor 
+--a agosto del 2025
 select numero_tarjeta,c.cliente_id,c.nombre,c.rfc
 from cliente c
 natural join tarjeta t

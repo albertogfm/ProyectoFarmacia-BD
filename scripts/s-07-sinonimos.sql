@@ -24,10 +24,10 @@ create or replace synonym detalle_evento for gaga_proy_admin.detalle_evento;
 create or replace synonym medicina for gaga_proy_admin.medicina;
 create or replace synonym cedis for gaga_proy_admin.cedis;
 
-Prompt CONECTANDO CON EL USUARIO GAGA_PROY_ADMIN
+Prompt ===CONECTANDO CON EL USUARIO GAGA_PROY_ADMIN===
 connect gaga_proy_admin/gaga
 
-prompt creando sinonimos de software externo con prefijo
+prompt ===CREANDO SINONIMOS DE SOFTWARE EXTERNO CON PREFIJO==
 declare
   cursor cur_table_names is
    select table_name
