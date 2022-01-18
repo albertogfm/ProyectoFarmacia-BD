@@ -63,6 +63,7 @@ Prompt =====PRUEBAS TRIGGER=====
 @s-12-tr-historico-pedido-prueba
 @s-12-tr-historico-ubicacion-prueba
 @s-12-tr-actualizar-sustancia-prueba
+commit;
 Prompt =====PRUEBAS PROCEDIMIENTOS=====
 @s-14-p-genera-pedido-prueba
 @s-14-p-generar-nuevo-usuario-prueba
