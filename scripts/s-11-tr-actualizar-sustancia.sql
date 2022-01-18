@@ -31,8 +31,7 @@ begin
 	sustancia_list(v_index).fecha_actualizacion := v_fecha;
 	sustancia_list(v_index).usuario_actualiza := v_usuario;
 end before each row;
---inicia after statement
---aquí se hacen las inserciones de forma eficiente
+
 after statement is
 begin
   forall i in sustancia_list.first .. sustancia_list.last
