@@ -5,7 +5,7 @@
 --así simular una entrega
 
 create or replace trigger tr_inicio_ubicacion
-  after update of status_pedido_id on pedido
+  before update of status_pedido_id on pedido
   for each row
 declare
   v_ubicacion_actual_id number (10,0);
@@ -19,6 +19,7 @@ begin
     insert into ubicacion_actual (ubicacion_actual_id, latitud, longitud)
       values(v_ubicacion_actual_id,v_latitud, v_longitud);
     dbms_output.put_line('El pedido esta en transito o ya entregado');
+    :new.ubicacion_actual_id := v_ubicacion_actual_id;
   else 
     dbms_output.put_line('El pedido esta devuelto o cancelado, o puede estar recien creado');
   end if;

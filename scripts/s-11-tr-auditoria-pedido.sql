@@ -24,7 +24,7 @@ begin
       || v_USERNAME);
       raise_application_error(-20001,'Se intento cambiar el importe de un pedido');
     end if;
-
+    
 END; 
   /
 show errors

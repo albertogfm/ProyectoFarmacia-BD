@@ -259,9 +259,14 @@ create table historico_status_pedido(
     references status_pedido(status_pedido_id)
 );
 
-
-
-
+create table medicamento_log(
+  medicamento_log_id number(10,0) not null,
+  medicamento_id number(10,0) not null,
+  sustancia_anterior varchar2(150) not null,
+  sustancia_nuevo  varchar2(150) not null,
+  fecha_actualizacion date not null,
+  usuario_actualiza varchar2(100) not null
+);
 
 
 --APLICANDO CHECKS

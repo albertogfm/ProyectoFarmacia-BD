@@ -45,7 +45,7 @@ set linesize window
 col sustancia_activa format a30
 col descripcion format a55
 col medicamento_id heading med_id
-
+column medicamento_id clear
 Prompt ============REALIZANDO PRUEBAS CON LOS SINONIMOS CREADOS=============
 select * from XX_medicamento where medicamento_id between 1 and 5;
 select * from XX_empleado;

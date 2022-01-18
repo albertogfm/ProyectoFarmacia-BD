@@ -42,6 +42,7 @@ Prompt =====CREANDO TRIGGERS=====
 @s-11-tr-historico-pedido
 @s-11-tr-historico-ubicacion
 @s-11-tr-inicio-ubicacion
+@s-11-tr-actualizar-sustancia
 
 Prompt =====CREANDO PROCEDIMIENTOS=====
 @s-13-p-genera-pedido
@@ -59,6 +60,7 @@ Prompt =====PRUEBAS TRIGGER=====
 @s-12-tr-auditoria-pedido-prueba
 @s-12-tr-historico-pedido-prueba
 @s-12-tr-historico-ubicacion-prueba
+@s-12-tr-actualizar-sustancia-prueba
 Prompt =====PRUEBAS PROCEDIMIENTOS=====
 @s-14-p-genera-pedido-prueba
 @s-14-p-generar-nuevo-usuario-prueba
