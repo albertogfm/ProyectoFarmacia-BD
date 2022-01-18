@@ -13,7 +13,7 @@ conn sys/system as sysdba
 create or replace directory dir_files as '/tmp/bases/direccion_files';
 grant read, write on directory dir_files to gaga_proy_admin;
 
-prompt Creando procedimiento con usuario gaga_1201_autos
+prompt Creando procedimiento con usuario gaga_proy_Admin
 conn gaga_proy_admin/gaga
 set serveroutput on
 create or replace procedure sp_actualiza_almacen_dir (v_index in varchar2) is
@@ -27,7 +27,7 @@ create or replace procedure sp_actualiza_almacen_dir (v_index in varchar2) is
 begin
     --Nombre Archivo
     v_nombre_archivo:='file-'||v_index||'.pdf';
-    dbms_output.put_line('Cargando foto para '||v_nombre_archivo);
+    dbms_output.put_line('Cargando pdf para '||v_nombre_archivo);
     
     --Validando si el archivo existe
     v_bfile:=bfilename('DIR_FILES',v_nombre_archivo);

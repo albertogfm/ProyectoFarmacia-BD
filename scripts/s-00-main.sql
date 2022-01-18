@@ -68,7 +68,7 @@ Prompt =====PRUEBAS PROCEDIMIENTOS=====
 @s-14-p-genera-pedido-prueba
 @s-14-p-generar-nuevo-usuario-prueba
 @s-18-lob-cargar-almacen-prueba.sql
-
+commit;
 Prompt =====PRUEBAS FUNCIONES=====
 @s-16-fx-genera-folio-prueba.sql
 @s-16-fx-medicamento-almacen-prueba.sql
