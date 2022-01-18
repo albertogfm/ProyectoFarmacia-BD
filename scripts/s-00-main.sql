@@ -55,6 +55,7 @@ Prompt =====CREANDO FUNCIONES=====
 @s-15-fx-medicamentos-almacen.sql
 @s-15-fx-pago-cliente.sql
 
+commit;
 Prompt ##########PRUEBAS##########
 
 Prompt =====PRUEBAS TRIGGER=====
@@ -73,7 +74,7 @@ Prompt =====PRUEBAS FUNCIONES=====
 @s-16-fx-pago-cliente-prueba.sql
 
 
-
+commit;
 
 
 
